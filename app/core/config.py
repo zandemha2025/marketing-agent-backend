@@ -33,7 +33,7 @@ class Settings(BaseSettings):
     access_token_expire_minutes: int = 60 * 24 * 7  # 1 week
 
     # CORS
-    cors_origins: list[str] = ["http://localhost:3000", "http://localhost:5173"]
+    cors_origins: list[str] = ["http://localhost:3000", "http://localhost:5173", "https://frontend-arcus1.vercel.app"]
 
     # Rate limiting
     rate_limit_requests: int = 100
