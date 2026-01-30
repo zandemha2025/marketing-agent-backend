@@ -26,9 +26,8 @@ async def lifespan(app: FastAPI):
     settings = get_settings()
     db = get_database_manager()
 
-    # Create tables in development
-    if settings.environment == "development":
-        await db.create_tables()
+    # Create tables if they don't exist (safe no-op if already created)
+    await db.create_tables()
 
     yield
 
