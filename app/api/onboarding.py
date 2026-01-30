@@ -121,6 +121,9 @@ async def start_onboarding(
         stage="initializing"
     )
 
+    # Commit so the org and knowledge base are visible to status polling
+    await db.commit()
+
     # Start background onboarding task
     logger.info(f"[START] Adding background task for org: {org.id}")
     background_tasks.add_task(
