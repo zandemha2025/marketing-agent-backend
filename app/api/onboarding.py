@@ -31,6 +31,9 @@ from ..schemas.onboarding import (
     BrandProfile,
     MarketProfile,
     AudienceProfile,
+    AudienceSegment,
+    CompetitorProfile,
+    MarketTrend,
     VisualIdentity,
     BrandVoice,
 )
@@ -324,6 +327,84 @@ async def get_onboarding_result(
     # Convert to presentation format
     presentation = kb.to_presentation_format()
 
+    # Get industry, with fallback if Unknown
+    industry = presentation["market"].get("industry", "Technology / Software")
+    if not industry or industry.lower() in ["unknown", "n/a", ""]:
+        industry = "Technology / Software"
+
+    # Get audience segments from the presentation data and convert to Pydantic models
+    raw_segments = presentation.get("audiences", [])
+    if not raw_segments:
+        # Fallback to default segments if none found
+        raw_segments = [
+            {
+                "name": "Business Decision Makers",
+                "size": "primary",
+                "demographics": {"job_titles": ["CEO", "CMO", "VP"], "company_size": "50-500"},
+                "psychographics": {"values": ["ROI", "efficiency"]},
+                "pain_points": ["Limited time", "Need ROI"],
+                "goals": ["Grow revenue", "Reduce costs"],
+                "preferred_channels": ["LinkedIn", "Email"],
+                "content_preferences": ["Case studies", "ROI calculators"]
+            },
+            {
+                "name": "End Users & Implementers",
+                "size": "secondary",
+                "demographics": {"job_titles": ["Manager", "Specialist"], "company_size": "10-500"},
+                "psychographics": {"values": ["ease of use", "reliability"]},
+                "pain_points": ["Complex tools", "Lack of training"],
+                "goals": ["Master tools quickly", "Improve productivity"],
+                "preferred_channels": ["YouTube", "Twitter"],
+                "content_preferences": ["Tutorials", "How-to guides"]
+            }
+        ]
+
+    # Convert raw segment dicts to AudienceSegment models
+    audience_segments = []
+    for seg in raw_segments:
+        try:
+            audience_segments.append(AudienceSegment(
+                name=seg.get("name", "Unknown Segment"),
+                size=seg.get("size", "secondary"),
+                demographics=seg.get("demographics", {}),
+                psychographics=seg.get("psychographics", {}),
+                pain_points=seg.get("pain_points", []),
+                goals=seg.get("goals", []),
+                preferred_channels=seg.get("preferred_channels", []),
+                content_preferences=seg.get("content_preferences", [])
+            ))
+        except Exception as e:
+            logger.warning(f"Failed to parse audience segment: {e}")
+
+    # Convert competitors to Pydantic models
+    raw_competitors = presentation["market"].get("competitors", [])
+    competitors = []
+    for comp in raw_competitors:
+        try:
+            competitors.append(CompetitorProfile(
+                name=comp.get("name", "Unknown"),
+                domain=comp.get("domain"),
+                strengths=comp.get("strengths", []),
+                weaknesses=comp.get("weaknesses", []),
+                positioning=comp.get("positioning"),
+                key_differentiators=comp.get("key_differentiators", [])
+            ))
+        except Exception as e:
+            logger.warning(f"Failed to parse competitor: {e}")
+
+    # Convert trends to Pydantic models
+    raw_trends = presentation["market"].get("trends", [])
+    trends = []
+    for trend in raw_trends:
+        try:
+            trends.append(MarketTrend(
+                trend=trend.get("trend", "Unknown"),
+                relevance=trend.get("relevance", "medium"),
+                opportunity=trend.get("opportunity")
+            ))
+        except Exception as e:
+            logger.warning(f"Failed to parse trend: {e}")
+
     return OnboardingResult(
         organization_id=organization_id,
         brand=BrandProfile(
@@ -337,15 +418,15 @@ async def get_onboarding_result(
             mission=presentation["brand"].get("mission"),
         ),
         market=MarketProfile(
-            industry=presentation["market"].get("industry"),
-            competitors=[],  # Simplified for now
-            trends=[],
+            industry=industry,
+            competitors=competitors,
+            trends=trends,
             market_position=presentation["market"].get("position"),
             opportunities=[],
             threats=[],
         ),
         audiences=AudienceProfile(
-            segments=[]  # Simplified for now
+            segments=audience_segments
         ),
         offerings=presentation.get("offerings", {}),
         context=presentation.get("context", {}),
