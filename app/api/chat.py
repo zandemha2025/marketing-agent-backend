@@ -382,12 +382,12 @@ async def send_message(
             media_type="text/event-stream"
         )
     else:
-        # Non-streaming response
-        response = await llm.complete(
-            prompt=request.content,
-            system=full_system,
-            history=history[:-1] if history else None
-        )
+        # Non-streaming response - use chat() for multi-turn history
+        messages = [{"role": "system", "content": full_system}]
+        if history and len(history) > 1:
+            messages.extend(history[:-1])  # Exclude current message
+        messages.append({"role": "user", "content": request.content})
+        response = await llm.chat(messages=messages)
 
         # Save assistant message
         assistant_message = await repo.add_message(
