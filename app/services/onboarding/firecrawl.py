@@ -91,7 +91,18 @@ class FirecrawlService:
             domain = f"https://{domain}"
 
         parsed = urlparse(domain)
-        base_domain = f"{parsed.scheme}://{parsed.netloc}"
+        hostname = parsed.netloc
+
+        # Strip country-specific subdomains (e.g., nl.stripe.com -> stripe.com)
+        # to ensure we get the main/English version
+        parts = hostname.split(".")
+        if len(parts) > 2:
+            # Check if first part is a 2-letter country code
+            if len(parts[0]) == 2 and parts[0].isalpha() and parts[0].lower() not in ["go", "my", "co"]:
+                hostname = ".".join(parts[1:])
+                logger.info(f"Stripped country subdomain: {parsed.netloc} -> {hostname}")
+
+        base_domain = f"{parsed.scheme}://{hostname}"
 
         if on_progress:
             await on_progress("crawling", 0.0, f"Starting crawl of {base_domain}")
@@ -146,6 +157,9 @@ class FirecrawlService:
                     "formats": ["markdown", "html"],
                     "includeTags": ["title", "meta", "h1", "h2", "h3", "p", "a", "img"],
                     "excludeTags": ["script", "style", "nav", "footer"],
+                    "headers": {
+                        "Accept-Language": "en-US,en;q=0.9"  # Force English content
+                    }
                 }
             }
         )
@@ -258,7 +272,9 @@ class FirecrawlService:
             response = await self.client.get(
                 url,
                 headers={
-                    "User-Agent": "Mozilla/5.0 (compatible; MarketingAgent/1.0)"
+                    "User-Agent": "Mozilla/5.0 (compatible; MarketingAgent/1.0)",
+                    "Accept-Language": "en-US,en;q=0.9",  # Force English content
+                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
                 },
                 follow_redirects=True
             )

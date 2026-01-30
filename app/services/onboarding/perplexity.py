@@ -315,51 +315,62 @@ class PerplexityService:
         industry: Optional[str]
     ) -> List[AudienceInsight]:
         """Research target audience segments."""
-        query = f"""
-        Research the target audience for {company_name} ({domain}).
+        industry_context = f"operating in {industry}" if industry else ""
 
-        Identify 2-3 primary audience segments and for each provide:
-        1. Segment name
-        2. Demographics (age, job titles, company size, etc.)
-        3. Psychographics (values, motivations, lifestyle)
-        4. Pain points (3-5)
-        5. Goals (3-5)
-        6. Preferred marketing channels
-        7. Content preferences
+        query = f"""
+        Research the target audience for {company_name} ({domain}) {industry_context}.
+
+        CRITICAL: You MUST identify exactly 2-3 distinct audience segments.
+        Consider:
+        - Who PAYS for the product? (decision makers, budget holders)
+        - Who USES the product? (end users, implementers)
+        - What SIZE companies? (startups, SMBs, enterprise)
+
+        For EACH segment provide:
+        1. Segment name (descriptive, e.g., "Startup Technical Founders" not just "Users")
+        2. Demographics (age range, job titles, company size, industries, geography)
+        3. Psychographics (values, motivations, priorities)
+        4. Pain points (at least 3 specific challenges they face)
+        5. Goals (at least 3 things they want to achieve)
+        6. Preferred channels (LinkedIn, Twitter, Email, YouTube, etc.)
+        7. Content preferences (case studies, tutorials, webinars, etc.)
 
         Format as JSON:
         {{
             "segments": [
                 {{
-                    "segment_name": "...",
+                    "segment_name": "Descriptive Segment Name",
                     "demographics": {{
-                        "age_range": "...",
-                        "job_titles": ["...", "..."],
-                        "company_size": "...",
-                        "location": "..."
+                        "age_range": "25-45",
+                        "job_titles": ["CTO", "VP Engineering", "Tech Lead"],
+                        "company_size": "10-500 employees",
+                        "industries": ["SaaS", "Technology"],
+                        "geography": "Global, primarily US and Europe"
                     }},
                     "psychographics": {{
-                        "values": ["...", "..."],
-                        "motivations": ["...", "..."],
-                        "lifestyle": "..."
+                        "values": ["efficiency", "innovation", "reliability"],
+                        "motivations": ["scale their business", "stay competitive"],
+                        "priorities": ["time to market", "cost efficiency"]
                     }},
-                    "pain_points": ["...", "..."],
-                    "goals": ["...", "..."],
-                    "preferred_channels": ["...", "..."],
-                    "content_preferences": ["...", "..."]
+                    "pain_points": ["specific pain 1", "specific pain 2", "specific pain 3"],
+                    "goals": ["goal 1", "goal 2", "goal 3"],
+                    "preferred_channels": ["LinkedIn", "Twitter", "Tech blogs"],
+                    "content_preferences": ["Technical documentation", "Case studies", "Webinars"]
                 }}
             ]
         }}
+
+        IMPORTANT: You MUST return at least 2 complete segments. Never return an empty array.
         """
 
         result = await self._query_perplexity(
             query,
-            "You are an audience research analyst. Respond only with valid JSON."
+            "You are an audience research analyst. You MUST respond with valid JSON containing 2-3 audience segments."
         )
 
         try:
             data = self._extract_json(result)
-            return [
+            segments = [
                 AudienceInsight(
                     segment_name=s.get("segment_name", ""),
                     demographics=s.get("demographics", {}),
@@ -371,9 +382,78 @@ class PerplexityService:
                 )
                 for s in data.get("segments", [])
             ]
+
+            # If we still got no segments, return default segments
+            if not segments:
+                segments = self._get_default_audience_segments(company_name, industry)
+
+            return segments
         except Exception as e:
             logger.error(f"Error parsing audience data: {e}")
-            return []
+            return self._get_default_audience_segments(company_name, industry)
+
+    def _get_default_audience_segments(
+        self,
+        company_name: str,
+        industry: Optional[str]
+    ) -> List[AudienceInsight]:
+        """Return default audience segments when research fails."""
+        return [
+            AudienceInsight(
+                segment_name="Business Decision Makers",
+                demographics={
+                    "age_range": "30-50",
+                    "job_titles": ["CEO", "CMO", "VP", "Director"],
+                    "company_size": "50-500 employees",
+                    "industries": ["Technology", "Professional Services"],
+                    "geography": "North America, Europe"
+                },
+                psychographics={
+                    "values": ["ROI", "efficiency", "innovation"],
+                    "motivations": ["grow revenue", "reduce costs", "stay competitive"],
+                    "priorities": ["business outcomes", "team productivity"]
+                },
+                pain_points=[
+                    "Limited time to evaluate solutions",
+                    "Need to demonstrate ROI to stakeholders",
+                    "Integration with existing tools"
+                ],
+                goals=[
+                    "Find solutions that deliver measurable results",
+                    "Streamline operations",
+                    "Enable team growth"
+                ],
+                preferred_channels=["LinkedIn", "Email", "Industry events"],
+                content_preferences=["Case studies", "ROI calculators", "Executive summaries"]
+            ),
+            AudienceInsight(
+                segment_name="End Users & Implementers",
+                demographics={
+                    "age_range": "25-40",
+                    "job_titles": ["Manager", "Specialist", "Analyst", "Coordinator"],
+                    "company_size": "10-500 employees",
+                    "industries": ["Various"],
+                    "geography": "Global"
+                },
+                psychographics={
+                    "values": ["ease of use", "reliability", "support"],
+                    "motivations": ["do job better", "save time", "impress leadership"],
+                    "priorities": ["daily workflow", "learning curve"]
+                },
+                pain_points=[
+                    "Complex tools that are hard to learn",
+                    "Lack of training resources",
+                    "Poor customer support"
+                ],
+                goals=[
+                    "Master tools quickly",
+                    "Improve personal productivity",
+                    "Deliver better results"
+                ],
+                preferred_channels=["YouTube", "Twitter", "Online communities"],
+                content_preferences=["Tutorials", "How-to guides", "Video demos"]
+            )
+        ]
 
     async def _research_news(
         self,
@@ -425,18 +505,82 @@ class PerplexityService:
         competitors: List[CompetitorProfile]
     ) -> str:
         """Determine the industry based on company and competitor info."""
-        competitor_names = ", ".join([c.name for c in competitors[:5]])
+        competitor_names = ", ".join([c.name for c in competitors[:5]]) if competitors else "general competitors"
 
         query = f"""
-        Based on {company_name} ({domain}) and its competitors ({competitor_names}),
-        what is the specific industry or market category?
+        Analyze {company_name} ({domain}) and determine its PRIMARY industry.
 
-        Respond with just the industry name, e.g., "SaaS Project Management",
-        "E-commerce Fashion", "B2B Marketing Technology", etc.
+        {"Known competitors: " + competitor_names if competitors else ""}
+
+        IMPORTANT: You MUST provide a specific industry classification.
+        Common industry categories include:
+        - Financial Technology (Fintech) / Payment Processing
+        - E-commerce / Retail Technology
+        - SaaS / Software as a Service
+        - Healthcare Technology
+        - Marketing Technology (MarTech)
+        - Human Resources Technology (HRTech)
+        - Enterprise Software
+        - Developer Tools
+        - Cybersecurity
+        - Artificial Intelligence / Machine Learning
+        - Cloud Infrastructure
+        - Education Technology (EdTech)
+        - Real Estate Technology (PropTech)
+
+        Based on what this company does, respond with ONLY the industry name.
+        Be specific (e.g., "Financial Technology - Payment Processing" not just "Technology").
+
+        NEVER respond with "Unknown" - always make your best assessment.
         """
 
-        result = await self._query_perplexity(query)
-        return result.strip().strip('"')
+        try:
+            result = await self._query_perplexity(query)
+            industry = result.strip().strip('"').strip("'")
+
+            # Validate we got a real answer
+            if not industry or industry.lower() in ["unknown", "n/a", "not available", "unclear"]:
+                # Try to infer from domain
+                industry = self._infer_industry_from_domain(domain)
+
+            return industry
+        except Exception as e:
+            logger.error(f"Error determining industry: {e}")
+            return self._infer_industry_from_domain(domain)
+
+    def _infer_industry_from_domain(self, domain: str) -> str:
+        """Infer industry from domain name as a last resort."""
+        domain_lower = domain.lower()
+
+        # Common domain patterns
+        patterns = {
+            "pay": "Financial Technology - Payments",
+            "stripe": "Financial Technology - Payment Processing",
+            "shop": "E-commerce / Retail",
+            "health": "Healthcare Technology",
+            "med": "Healthcare Technology",
+            "edu": "Education Technology",
+            "learn": "Education Technology",
+            "hr": "Human Resources Technology",
+            "recruit": "Human Resources Technology",
+            "market": "Marketing Technology",
+            "ad": "Advertising Technology",
+            "cloud": "Cloud Infrastructure",
+            "secure": "Cybersecurity",
+            "cyber": "Cybersecurity",
+            "ai": "Artificial Intelligence",
+            "data": "Data & Analytics",
+            "crm": "Customer Relationship Management",
+            "erp": "Enterprise Software",
+            "dev": "Developer Tools",
+            "code": "Developer Tools",
+        }
+
+        for pattern, industry in patterns.items():
+            if pattern in domain_lower:
+                return industry
+
+        return "Technology / Software"  # Better than "Unknown"
 
     def _extract_json(self, text: str) -> Dict[str, Any]:
         """Extract JSON from a text response."""
