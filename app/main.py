@@ -2,11 +2,13 @@
 FastAPI application entry point.
 """
 import os
+import sys
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
+from sqlalchemy import text
 
 from .core.config import get_settings
 from .core.database import get_database_manager
@@ -15,8 +17,8 @@ from .api import router as api_router
 # Import models to register them with SQLAlchemy before creating tables
 from .models import *  # noqa: F401, F403
 
-# Path to frontend dist (relative to project root)
-FRONTEND_DIR = "/sessions/blissful-focused-dijkstra/mnt/workflow/frontend/dist"
+# Path to frontend dist - configurable via environment
+FRONTEND_DIR = os.environ.get("FRONTEND_DIR", os.path.join(os.path.dirname(__file__), "..", "..", "frontend", "dist"))
 
 
 @asynccontextmanager
@@ -63,8 +65,36 @@ def create_app() -> FastAPI:
     # Health check endpoint (before catch-all)
     @app.get("/health")
     async def health_check():
-        """Health check endpoint."""
-        return {"status": "healthy", "version": "2.0.0"}
+        """Health check endpoint with diagnostics."""
+        settings = get_settings()
+        checks = {
+            "status": "healthy",
+            "version": "2.0.0",
+            "python_version": sys.version,
+            "environment": settings.environment,
+            "checks": {}
+        }
+
+        # Check database connection
+        try:
+            db = get_database_manager()
+            async with db.session() as session:
+                await session.execute(text("SELECT 1"))
+            checks["checks"]["database"] = "connected"
+        except Exception as e:
+            checks["checks"]["database"] = f"error: {str(e)}"
+            checks["status"] = "unhealthy"
+
+        # Check required API keys (don't expose values, just presence)
+        checks["checks"]["openrouter_api_key"] = "set" if settings.openrouter_api_key else "MISSING"
+        checks["checks"]["firecrawl_api_key"] = "set" if settings.firecrawl_api_key else "MISSING"
+        checks["checks"]["perplexity_api_key"] = "set" if settings.perplexity_api_key else "MISSING"
+
+        # If critical keys are missing, mark unhealthy
+        if not settings.openrouter_api_key:
+            checks["status"] = "unhealthy"
+
+        return checks
 
     # Serve frontend static files if available
     if os.path.exists(FRONTEND_DIR):

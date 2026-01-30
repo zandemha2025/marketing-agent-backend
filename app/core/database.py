@@ -47,6 +47,9 @@ class DatabaseManager:
             url = url.replace("postgresql://", "postgresql+asyncpg://")
             if settings.environment == "test":
                 pool_class = NullPool
+            # Enable SSL for Railway and other cloud PostgreSQL providers
+            # asyncpg uses 'ssl' parameter directly
+            connect_args = {"ssl": "require"}
 
         self.engine = create_async_engine(
             url,
