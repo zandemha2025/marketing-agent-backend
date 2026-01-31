@@ -1,0 +1,70 @@
+{
+  "workstream": "brand_onboarding",
+  "timestamp": "2026-01-31T01:54:39.221431",
+  "tests": [
+    {
+      "name": "Can create organization",
+      "passed": true,
+      "skipped": false,
+      "details": {
+        "organization_id": "b7797bfd19a3",
+        "status": "in_progress"
+      },
+      "timestamp": "2026-01-31T01:47:49.979263"
+    },
+    {
+      "name": "Can run onboarding pipeline",
+      "passed": true,
+      "skipped": false,
+      "details": {
+        "status": "complete",
+        "progress": 1.0
+      },
+      "timestamp": "2026-01-31T01:47:51.987361"
+    },
+    {
+      "name": "Knowledge base has brand_data.name",
+      "passed": true,
+      "skipped": false,
+      "details": {
+        "brand_name": "Test-Brand-1769842069"
+      },
+      "timestamp": "2026-01-31T01:47:51.996501"
+    },
+    {
+      "name": "Knowledge base has brand_data.voice.tone",
+      "passed": true,
+      "skipped": false,
+      "details": {
+        "voice_tone": [
+          "professional"
+        ]
+      },
+      "timestamp": "2026-01-31T01:47:51.996514"
+    },
+    {
+      "name": "Knowledge base has market_data.competitors",
+      "passed": false,
+      "skipped": false,
+      "details": {
+        "competitor_count": 0
+      },
+      "timestamp": "2026-01-31T01:47:51.996517"
+    },
+    {
+      "name": "Knowledge base has audiences_data.segments",
+      "passed": true,
+      "skipped": false,
+      "details": {
+        "segment_count": 2
+      },
+      "timestamp": "2026-01-31T01:47:51.996521"
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "passed": 5,
+    "failed": 1,
+    "skipped": 0
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "workstream": "landing_pages",
+  "timestamp": "2026-01-31T01:54:39.224038",
+  "tests": [
+    {
+      "name": "Can generate landing page",
+      "passed": true,
+      "skipped": false,
+      "details": {
+        "page_id": "d98ce12e-4d51-4f30-8adf-e692664d39c6",
+        "preview_url": "/preview/landing-pages/d98ce12e-4d51-4f30-8adf-e692664d39c6"
+      },
+      "timestamp": "2026-01-31T01:50:29.024512"
+    },
+    {
+      "name": "All templates work (product_launch, lead_gen, event, webinar)",
+      "passed": true,
+      "skipped": false,
+      "details": {
+        "templates_tested": [
+          "product_launch",
+          "lead_gen",
+          "event",
+          "webinar"
+        ],
+        "templates_working": [
+          "product_launch",
+          "lead_gen",
+          "event",
+          "webinar"
+        ]
+      },
+      "timestamp": "2026-01-31T01:53:49.957224"
+    },
+    {
+      "name": "HTML/CSS generated",
+      "passed": true,
+      "skipped": false,
+      "details": {
+        "has_html": true,
+        "has_css": true,
+        "html_length": 10526,
+        "css_length": 2770
+      },
+      "timestamp": "2026-01-31T01:53:49.957239"
+    },
+    {
+      "name": "Preview URL works",
+      "passed": false,
+      "skipped": false,
+      "details": {
+        "preview_url": null
+      },
+      "timestamp": "2026-01-31T01:53:49.957243"
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "passed": 3,
+    "failed": 1,
+    "skipped": 0
+  }
+}

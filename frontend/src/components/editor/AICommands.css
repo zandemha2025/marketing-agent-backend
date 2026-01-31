@@ -1,0 +1,306 @@
+.ai-commands-trigger {
+    position: relative;
+}
+
+.slash-command-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: linear-gradient(135deg, var(--color-primary), #8b5cf6);
+    border: none;
+    border-radius: var(--radius-sm);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.slash-command-btn:hover {
+    opacity: 0.9;
+}
+
+/* Command Palette */
+.ai-commands-palette {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 400px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.palette-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.palette-header input {
+    flex: 1;
+    padding: var(--spacing-sm);
+    border: none;
+    background: transparent;
+    color: var(--color-text);
+    font-size: 14px;
+    outline: none;
+}
+
+.palette-header button {
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    font-size: 18px;
+    padding: var(--spacing-xs);
+}
+
+.palette-commands {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.palette-command {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.palette-command:hover {
+    background-color: var(--color-surface-hover);
+}
+
+.palette-command .command-icon {
+    font-size: 20px;
+    width: 32px;
+    text-align: center;
+}
+
+.palette-command .command-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.palette-command .command-name {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.palette-command .command-desc {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.palette-command .command-hint {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+}
+
+.palette-footer {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--color-background);
+    border-top: 1px solid var(--color-border);
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.palette-footer kbd {
+    padding: 2px 6px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-family: monospace;
+}
+
+/* Command Input Panel */
+.command-input-panel {
+    padding: var(--spacing-md);
+}
+
+.input-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.input-icon {
+    font-size: 24px;
+}
+
+.input-label {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.style-selector {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.style-selector label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.style-selector select {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-size: 14px;
+}
+
+.command-input-panel textarea {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-size: 14px;
+    resize: vertical;
+    margin-bottom: var(--spacing-md);
+}
+
+.command-input-panel textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.input-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+}
+
+.input-actions button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.input-actions button:first-child {
+    background-color: var(--color-surface-hover);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+}
+
+.input-actions button.primary {
+    background-color: var(--color-primary);
+    border: none;
+    color: white;
+}
+
+.input-actions button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.input-hint {
+    margin-top: var(--spacing-sm);
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    text-align: center;
+}
+
+.input-hint kbd {
+    padding: 2px 6px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-family: monospace;
+}
+
+/* Command Menu (TipTap suggestion) */
+.ai-command-menu {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.command-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.command-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.command-item:hover,
+.command-item.selected {
+    background-color: var(--color-surface-hover);
+}
+
+.command-item .command-icon {
+    font-size: 20px;
+    width: 32px;
+    text-align: center;
+}
+
+.command-item .command-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.command-item .command-label {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.command-item .command-description {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.command-item .command-shortcut {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+}
+
+.command-empty {
+    padding: var(--spacing-md);
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ai-commands-palette {
+        width: calc(100vw - var(--spacing-lg));
+        left: var(--spacing-sm);
+        right: var(--spacing-sm);
+    }
+}

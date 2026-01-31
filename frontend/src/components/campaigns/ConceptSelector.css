@@ -1,0 +1,135 @@
+.concept-selector {
+  padding: var(--spacing-lg, 24px);
+}
+
+.concept-selector--empty {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: 64px 24px;
+}
+
+.concept-selector__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 6px;
+}
+
+.concept-selector__subtitle {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin: 0 0 24px;
+}
+
+.concept-selector__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-md, 16px);
+}
+
+.concept-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg, 12px);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.concept-card:hover {
+  border-color: rgba(124, 58, 237, 0.4);
+}
+
+.concept-card--selected {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent), var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
+.concept-card__badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+  background: rgba(124, 58, 237, 0.12);
+  padding: 3px 10px;
+  border-radius: var(--radius-full, 9999px);
+  margin-bottom: 14px;
+}
+
+.concept-card__name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 6px;
+}
+
+.concept-card__tagline {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--color-accent-hover);
+  margin: 0 0 12px;
+}
+
+.concept-card__summary {
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  margin: 0 0 16px;
+  flex: 1;
+}
+
+.concept-card__visual {
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md, 8px);
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.concept-card__visual-label {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+}
+
+.concept-card__visual-text {
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.concept-card__btn {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  padding: 10px 20px;
+  border-radius: var(--radius-md, 8px);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: auto;
+}
+
+.concept-card__btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-text-primary);
+}
+
+.concept-card__btn--selected {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-text-primary);
+}
+
+.concept-card__btn--selected:hover {
+  background: var(--color-accent-hover);
+}

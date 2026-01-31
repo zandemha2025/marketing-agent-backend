@@ -1,0 +1,174 @@
+/**
+ * Sliding Deliverables Panel - Enhanced Styles
+ * Uses design system tokens for consistency
+ */
+
+/* Generate Button in Header */
+.sdp-generate-btn {
+  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-secondary-500) 100%);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-2) var(--spacing-4);
+  color: var(--color-gray-0);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sdp-generate-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Editor View */
+.sdp-editor {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+}
+
+.sdp-editor__header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-4);
+  background: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sdp-editor__back {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-1-5) var(--spacing-3);
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sdp-editor__back:hover {
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
+}
+
+.sdp-editor__type {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1-5);
+  padding: var(--spacing-1) var(--spacing-2-5);
+  border-radius: var(--radius-xl);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+/* Title Row */
+.sdp-editor__title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.sdp-editor__title-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  outline: none;
+}
+
+.sdp-editor__title-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.sdp-editor__platform {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* Editor Content Area */
+.sdp-editor__content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.sdp-editor__content .document-editor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sdp-editor__content .document-editor__body {
+  flex: 1;
+}
+
+.sdp-editor__content .document-editor__textarea {
+  height: 100%;
+  min-height: 300px;
+}
+
+/* Action Bar */
+.sdp-editor__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-4);
+  background: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+}
+
+.sdp-action-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1-5);
+  padding: var(--spacing-2) var(--spacing-4);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sdp-action-btn:hover {
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
+}
+
+.sdp-action-btn--primary {
+  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-secondary-500) 100%);
+  border: none;
+  color: var(--color-gray-0);
+}
+
+.sdp-action-btn--primary:hover {
+  opacity: 0.9;
+}
+
+.sdp-action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Override inner panel styles */
+.sliding-drawer__content .deliverables-panel {
+  border-left: none;
+  height: 100%;
+}
+
+.sliding-drawer__content .deliverables-panel__header {
+  padding: 0;
+  border-bottom: none;
+  margin-bottom: var(--spacing-4);
+}

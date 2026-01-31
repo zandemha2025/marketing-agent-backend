@@ -1,0 +1,60 @@
+{
+  "workstream": "kata_lab",
+  "timestamp": "2026-01-31T01:54:39.223107",
+  "tests": [
+    {
+      "name": "Script builder works",
+      "passed": true,
+      "skipped": false,
+      "details": {
+        "job_id": "test_job_001",
+        "job_type": "synthetic_influencer"
+      },
+      "timestamp": "2026-01-31T01:48:04.986742"
+    },
+    {
+      "name": "Synthetic influencer job creation works",
+      "passed": true,
+      "skipped": false,
+      "details": {
+        "status": "pending",
+        "has_script": true
+      },
+      "timestamp": "2026-01-31T01:48:04.986762"
+    },
+    {
+      "name": "Video compositor job creation works",
+      "passed": true,
+      "skipped": false,
+      "details": {
+        "job_type": "video_composite"
+      },
+      "timestamp": "2026-01-31T01:48:04.986766"
+    },
+    {
+      "name": "Mock mode fallback works",
+      "passed": true,
+      "skipped": false,
+      "details": {
+        "has_video_keys": false,
+        "mode": "mock"
+      },
+      "timestamp": "2026-01-31T01:48:04.986771"
+    },
+    {
+      "name": "API endpoint /api/kata/jobs accessible",
+      "passed": true,
+      "skipped": false,
+      "details": {
+        "status_code": 200
+      },
+      "timestamp": "2026-01-31T01:48:04.996010"
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0
+  }
+}

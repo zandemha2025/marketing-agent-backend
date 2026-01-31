@@ -1,0 +1,13 @@
+{
+  "email_id": "8e539599-3fbf-46de-b15c-34711bd28fee",
+  "email_type": "newsletter",
+  "campaign_id": "test-newsletter-001",
+  "subject": "Test Newsletter Email",
+  "subject_lines": [
+    "\ud83d\udceb Your Weekly Update Has Arrived",
+    "Take a peek at what's new this week",
+    "Fresh content inside - Just for you"
+  ],
+  "preview_text": "Get insider tips, exclusive content, and this week's must-read stories.",
+  "created_at": "2026-01-31T01:41:01.657539"
+}

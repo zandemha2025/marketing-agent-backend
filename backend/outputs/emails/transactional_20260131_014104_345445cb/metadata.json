@@ -1,0 +1,13 @@
+{
+  "email_id": "345445cb-2c85-4e41-bf91-2d6b9ee697e0",
+  "email_type": "transactional",
+  "campaign_id": "test-transactional-001",
+  "subject": "Test Transactional Email",
+  "subject_lines": [
+    "\ud83d\udce7 Quick verification needed",
+    "Please confirm your recent action",
+    "Important: Action required for your account"
+  ],
+  "preview_text": "Please verify your recent account activity - we noticed something unusual",
+  "created_at": "2026-01-31T01:41:04.732755"
+}

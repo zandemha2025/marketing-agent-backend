@@ -1,0 +1,184 @@
+/**
+ * Sliding Drawer Styles - Premium Side Panel
+ *
+ * Warm coral theme with smooth animations and soft shadows.
+ * Drawers feel premium and non-intrusive.
+ */
+
+/* Sliding Drawer Container */
+.sliding-drawer-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-modal);
+  pointer-events: none;
+}
+
+.sliding-drawer-container--open {
+  pointer-events: auto;
+}
+
+/* Overlay */
+.sliding-drawer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  transition: background var(--transition-slow);
+}
+
+.sliding-drawer-container--open .sliding-drawer-overlay {
+  background: var(--color-bg-overlay);
+  backdrop-filter: blur(4px);
+}
+
+/* Drawer */
+.sliding-drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-bg-surface);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform var(--transition-slow) cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-elevated);
+  border-left: 1px solid var(--color-border-subtle);
+}
+
+.sliding-drawer-container--open .sliding-drawer {
+  transform: translateX(0);
+}
+
+/* Header */
+.sliding-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-5) var(--spacing-6);
+  border-bottom: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-surface);
+  flex-shrink: 0;
+}
+
+.sliding-drawer__header-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.sliding-drawer__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sliding-drawer__close:hover {
+  background: var(--color-bg-muted);
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.sliding-drawer__close svg {
+  width: 18px;
+  height: 18px;
+}
+
+.sliding-drawer__titles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-0-5);
+}
+
+.sliding-drawer__title {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.sliding-drawer__subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.sliding-drawer__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+/* Content */
+.sliding-drawer__content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+.sliding-drawer__content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sliding-drawer__content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sliding-drawer__content::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+.sliding-drawer__content::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-hover);
+}
+
+/* Footer */
+.sliding-drawer__footer {
+  padding: var(--spacing-5) var(--spacing-6);
+  border-top: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-muted);
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sliding-drawer {
+    width: 100% !important;
+  }
+}
+
+/* Animation for content items */
+.sliding-drawer__content > * {
+  animation: slideInContent var(--transition-slow) ease forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+@keyframes slideInContent {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered animation for multiple items */
+.sliding-drawer__content > *:nth-child(1) { animation-delay: 0.1s; }
+.sliding-drawer__content > *:nth-child(2) { animation-delay: 0.15s; }
+.sliding-drawer__content > *:nth-child(3) { animation-delay: 0.2s; }
+.sliding-drawer__content > *:nth-child(4) { animation-delay: 0.25s; }
+.sliding-drawer__content > *:nth-child(5) { animation-delay: 0.3s; }

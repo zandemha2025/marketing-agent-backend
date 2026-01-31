@@ -1,0 +1,173 @@
+{
+  "organization_id": "6e882037e1cd",
+  "brand": {
+    "name": "Nike-Test-1769831831",
+    "domain": "nike-test-1769831831.com",
+    "tagline": "",
+    "description": "",
+    "visual_identity": {
+      "logo_url": "",
+      "primary_color": null,
+      "secondary_colors": [],
+      "fonts": {},
+      "image_style": ""
+    },
+    "voice": {
+      "tone": [
+        "professional"
+      ],
+      "personality": "professional",
+      "vocabulary": [],
+      "avoid": [],
+      "sample_phrases": []
+    },
+    "values": [],
+    "mission": ""
+  },
+  "market": {
+    "industry": "Athletic Apparel & Footwear",
+    "competitors": [],
+    "trends": [],
+    "market_position": "",
+    "opportunities": [],
+    "threats": []
+  },
+  "audiences": {
+    "segments": [
+      {
+        "name": "Athletes & Fitness Enthusiasts",
+        "size": "primary",
+        "demographics": {
+          "age_range": "16-45",
+          "interests": [
+            "sports",
+            "fitness",
+            "athletics"
+          ],
+          "lifestyle": "active",
+          "geography": "Global"
+        },
+        "psychographics": {
+          "values": [
+            "performance",
+            "achievement",
+            "self-improvement"
+          ],
+          "motivations": [
+            "excel in sports",
+            "stay fit",
+            "look athletic"
+          ],
+          "priorities": [
+            "quality gear",
+            "performance enhancement"
+          ]
+        },
+        "pain_points": [
+          "Finding gear that enhances performance",
+          "Staying motivated with fitness goals",
+          "Balancing style with function"
+        ],
+        "goals": [
+          "Improve athletic performance",
+          "Look and feel like an athlete",
+          "Stay competitive in sports"
+        ],
+        "preferred_channels": [
+          "Instagram",
+          "YouTube",
+          "TikTok",
+          "Sports apps"
+        ],
+        "content_preferences": [
+          "Training tips",
+          "Athlete stories",
+          "Product demos"
+        ]
+      },
+      {
+        "name": "Lifestyle Consumers",
+        "size": "secondary",
+        "demographics": {
+          "age_range": "18-35",
+          "interests": [
+            "fashion",
+            "streetwear",
+            "sneakers"
+          ],
+          "lifestyle": "urban",
+          "geography": "Global"
+        },
+        "psychographics": {
+          "values": [
+            "style",
+            "authenticity",
+            "trendiness"
+          ],
+          "motivations": [
+            "express identity",
+            "stay fashionable",
+            "belong to culture"
+          ],
+          "priorities": [
+            "aesthetic appeal",
+            "brand authenticity"
+          ]
+        },
+        "pain_points": [
+          "Finding unique styles",
+          "Keeping up with trends",
+          "Balancing cost with quality"
+        ],
+        "goals": [
+          "Express personal style",
+          "Stay on trend",
+          "Own premium brands"
+        ],
+        "preferred_channels": [
+          "Instagram",
+          "TikTok",
+          "Fashion blogs",
+          "Sneaker communities"
+        ],
+        "content_preferences": [
+          "Style inspiration",
+          "Behind-the-scenes",
+          "Limited drops"
+        ]
+      }
+    ]
+  },
+  "offerings": {
+    "products": [
+      {
+        "name": "Core Product",
+        "description": "Primary offering from Nike-Test-1769831831",
+        "url": ""
+      },
+      {
+        "name": "Premium Solution",
+        "description": "Enhanced version with additional features",
+        "url": ""
+      },
+      {
+        "name": "Support Services",
+        "description": "Professional services and support",
+        "url": ""
+      }
+    ],
+    "services": [],
+    "differentiators": []
+  },
+  "context": {
+    "social": {},
+    "news": [],
+    "sentiment": {
+      "overall": "neutral",
+      "score": 0.7
+    }
+  },
+  "research_status": "complete",
+  "pages_analyzed": 0,
+  "duration_seconds": 0.0
+}

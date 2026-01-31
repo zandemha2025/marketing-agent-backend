@@ -1,0 +1,444 @@
+.email-builder {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+    overflow: hidden;
+}
+
+.builder-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.builder-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    padding: var(--spacing-xs);
+}
+
+.close-btn:hover {
+    color: var(--color-text);
+}
+
+/* Progress Bar */
+.progress-bar {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.progress-step {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-border);
+    color: var(--color-text-secondary);
+}
+
+.progress-step.active {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+}
+
+.progress-step.completed {
+    background-color: var(--color-success);
+    border-color: var(--color-success);
+    color: white;
+}
+
+/* Error Message */
+.error-message {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+    background-color: rgba(239, 68, 68, 0.1);
+    border-bottom: 1px solid var(--color-error);
+    color: var(--color-error);
+}
+
+.error-message button {
+    background: none;
+    border: none;
+    color: var(--color-error);
+    cursor: pointer;
+}
+
+/* Builder Content */
+.builder-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-lg);
+}
+
+.email-step {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.email-step h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.step-description {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 14px;
+}
+
+/* Email Types */
+.email-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.email-type-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-md);
+    background-color: var(--color-background);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.email-type-card:hover {
+    border-color: var(--color-primary);
+}
+
+.email-type-card.selected {
+    border-color: var(--color-primary);
+    background-color: rgba(59, 130, 246, 0.05);
+}
+
+.email-type-card input {
+    display: none;
+}
+
+.type-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.type-name {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.type-desc {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+/* Form Elements */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+/* Key Points */
+.key-points-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.key-point-item {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+}
+
+.key-point-item input {
+    flex: 1;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: var(--color-error);
+    cursor: pointer;
+    font-size: 16px;
+    padding: var(--spacing-xs);
+}
+
+.add-point-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--color-surface-hover);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.add-point-btn:hover {
+    background-color: var(--color-border);
+    color: var(--color-text);
+}
+
+/* Subject Variants */
+.subject-variants {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.subject-variants label {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.variant-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.variant-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.variant-btn:hover {
+    background-color: var(--color-surface-hover);
+}
+
+.variant-btn.selected {
+    background-color: rgba(59, 130, 246, 0.1);
+    border-color: var(--color-primary);
+}
+
+.variant-text {
+    font-size: 14px;
+    flex: 1;
+}
+
+.variant-meta {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+    margin-left: var(--spacing-sm);
+}
+
+/* Preview Tabs */
+.preview-tabs {
+    display: flex;
+    gap: var(--spacing-xs);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.preview-tabs button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.preview-tabs button:hover {
+    color: var(--color-text);
+}
+
+.preview-tabs button.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+/* Email Preview */
+.email-preview {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    min-height: 400px;
+}
+
+.html-preview-frame {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+.code-preview,
+.text-preview {
+    width: 100%;
+    height: 400px;
+    padding: var(--spacing-md);
+    background-color: var(--color-surface);
+    border: none;
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    resize: none;
+}
+
+/* Email Stats */
+.email-stats {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: var(--color-background);
+    border-radius: var(--radius-md);
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
+
+/* Builder Footer */
+.builder-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-lg);
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-background);
+}
+
+.back-btn,
+.next-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.back-btn {
+    background-color: var(--color-surface-hover);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+}
+
+.back-btn:hover {
+    background-color: var(--color-border);
+}
+
+.next-btn {
+    background-color: var(--color-primary);
+    border: none;
+    color: white;
+}
+
+.next-btn:hover:not(:disabled) {
+    background-color: var(--color-primary-hover);
+}
+
+.next-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.action-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.copy-btn,
+.save-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.copy-btn {
+    background-color: var(--color-surface-hover);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+}
+
+.save-btn {
+    background-color: var(--color-success);
+    border: none;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .email-types {
+        grid-template-columns: 1fr;
+    }
+
+    .variant-btn {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+
+    .variant-meta {
+        margin-left: 0;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+}

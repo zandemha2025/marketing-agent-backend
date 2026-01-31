@@ -1,0 +1,39 @@
+{
+  "workstream": "ai_chat_context",
+  "timestamp": "2026-01-31T01:54:39.221890",
+  "tests": [
+    {
+      "name": "Can create conversation",
+      "passed": true,
+      "skipped": false,
+      "details": {
+        "conversation_id": "3353e2b189a7"
+      },
+      "timestamp": "2026-01-31T01:47:58.583768"
+    },
+    {
+      "name": "Can send message",
+      "passed": true,
+      "skipped": false,
+      "details": {
+        "response_preview": "According to the brand information provided, your brand voice is defined as:\n\nTone: Professional\nPer"
+      },
+      "timestamp": "2026-01-31T01:48:04.900591"
+    },
+    {
+      "name": "Brand context loaded into prompts",
+      "passed": true,
+      "skipped": false,
+      "details": {
+        "note": "Response contains brand-related terms"
+      },
+      "timestamp": "2026-01-31T01:48:04.900616"
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "passed": 3,
+    "failed": 0,
+    "skipped": 0
+  }
+}

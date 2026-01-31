@@ -1,0 +1,43 @@
+{
+  "brand_onboarding": {
+    "status": "failed",
+    "details": {
+      "error": "{\"detail\":\"Organization already onboarded. Use /result endpoint to view data.\"}"
+    }
+  },
+  "campaign_execution": {
+    "status": "failed",
+    "details": {}
+  },
+  "ai_chat": {
+    "status": "partial",
+    "details": {
+      "quality_score": 0,
+      "questions_tested": 3,
+      "questions_answered": 0
+    }
+  },
+  "kata_lab": {
+    "status": "passed",
+    "details": {
+      "script_builder": true,
+      "video_compositor": true,
+      "synthetic_influencer": true
+    }
+  },
+  "deliverables": {
+    "status": "partial",
+    "details": {
+      "quality_score": 0.0,
+      "checks": {
+        "has_assets": false,
+        "has_deliverables": false,
+        "deliverables_have_content": false,
+        "can_generate_images": false
+      },
+      "num_assets": 0,
+      "num_deliverables": 0,
+      "deliverables_with_content": 0
+    }
+  }
+}

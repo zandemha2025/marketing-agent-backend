@@ -1,0 +1,60 @@
+{
+  "sequence_id": "1c3e97ae-2db9-4c86-8202-d3c975cad463",
+  "sequence_type": "welcome",
+  "campaign_id": "test-sequence-welcome-001",
+  "timing_schedule": [
+    1,
+    3,
+    5,
+    7,
+    14
+  ],
+  "total_emails": 5,
+  "brand_data": {
+    "primary_color": "#007bff",
+    "font_family": "Arial"
+  },
+  "created_at": "2026-01-31T01:41:54.558801",
+  "emails": [
+    {
+      "day": 1,
+      "position": 1,
+      "subject": "\ud83c\udf89 Welcome to the family! Your journey begins here",
+      "theme": "Welcome & Introduction",
+      "goal": "Introduce the brand and set expectations",
+      "preview_text": "Thanks for joining us! Here's what you can expect from our community"
+    },
+    {
+      "day": 3,
+      "position": 2,
+      "subject": "Ready to take your first step? Let's do this!",
+      "theme": "Getting Started",
+      "goal": "Help user take first steps",
+      "preview_text": "Quick win: Complete your first action in just 2 minutes"
+    },
+    {
+      "day": 5,
+      "position": 3,
+      "subject": "Here's what makes us different...",
+      "theme": "Key Features",
+      "goal": "Highlight main value propositions",
+      "preview_text": "Discover the features that thousands of customers love about our solution"
+    },
+    {
+      "day": 7,
+      "position": 4,
+      "subject": "Real Results: Meet Sarah's Amazing Journey",
+      "theme": "Success Stories",
+      "goal": "Build trust with social proof",
+      "preview_text": "From struggling to thriving - see how our community members transform their lives"
+    },
+    {
+      "day": 14,
+      "position": 5,
+      "subject": "Your Community Is Here For You \ud83e\udd1d",
+      "theme": "Community & Support",
+      "goal": "Connect user with resources",
+      "preview_text": "Connect with like-minded people and access exclusive resources just for you"
+    }
+  ]
+}

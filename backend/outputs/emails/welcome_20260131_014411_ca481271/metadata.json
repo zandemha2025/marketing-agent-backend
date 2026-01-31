@@ -1,0 +1,13 @@
+{
+  "email_id": "ca481271-8b05-4d6f-9185-51da61b4984a",
+  "email_type": "welcome",
+  "campaign_id": "test-storage-001",
+  "subject": "Welcome to Our Platform",
+  "subject_lines": [
+    "\ud83d\udc4b Great to have you on board!",
+    "Your journey with us begins today",
+    "Welcome aboard - let's get started"
+  ],
+  "preview_text": "Get started with your free account - exclusive tips & resources await! \ud83c\udf89",
+  "created_at": "2026-01-31T01:44:11.478425"
+}

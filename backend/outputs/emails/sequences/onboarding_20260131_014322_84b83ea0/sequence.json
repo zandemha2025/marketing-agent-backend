@@ -1,0 +1,60 @@
+{
+  "sequence_id": "84b83ea0-d220-4dd2-9ab4-ebc1a680ea40",
+  "sequence_type": "onboarding",
+  "campaign_id": "test-sequence-onboarding-001",
+  "timing_schedule": [
+    1,
+    2,
+    4,
+    7,
+    10
+  ],
+  "total_emails": 5,
+  "brand_data": {
+    "primary_color": "#007bff",
+    "font_family": "Arial"
+  },
+  "created_at": "2026-01-31T01:43:22.877745",
+  "emails": [
+    {
+      "day": 1,
+      "position": 1,
+      "subject": "\ud83c\udf89 Welcome! Let's get you set up in 2 minutes",
+      "theme": "Welcome & Setup",
+      "goal": "Get user started immediately",
+      "preview_text": "Quick setup guide inside - start getting value right away!"
+    },
+    {
+      "day": 2,
+      "position": 2,
+      "subject": "Here's your first quick win \ud83c\udfaf",
+      "theme": "Quick Win",
+      "goal": "Help achieve first success",
+      "preview_text": "A simple 5-minute action that will set you up for success"
+    },
+    {
+      "day": 4,
+      "position": 3,
+      "subject": "Here's what makes [Product] truly special",
+      "theme": "Feature Deep Dive",
+      "goal": "Explore key functionality",
+      "preview_text": "Discover the powerful features that set us apart from the competition"
+    },
+    {
+      "day": 7,
+      "position": 4,
+      "subject": "Level Up: 5 Pro Tips You Can't Miss",
+      "theme": "Pro Tips",
+      "goal": "Advanced usage guidance",
+      "preview_text": "Transform your experience with these game-changing insider techniques"
+    },
+    {
+      "day": 10,
+      "position": 5,
+      "subject": "Level up with these powerful integrations \ud83d\udd0c",
+      "theme": "Integration Guide",
+      "goal": "Connect with other tools",
+      "preview_text": "Connect your favorite tools and supercharge your workflow today"
+    }
+  ]
+}

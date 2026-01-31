@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Test</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #1a1a1a; color: white; }
+        pre { background: #333; padding: 10px; overflow: auto; }
+        button { padding: 10px 20px; font-size: 16px; margin: 5px; cursor: pointer; }
+        input { padding: 10px; font-size: 16px; width: 300px; }
+    </style>
+</head>
+<body>
+    <h1>API Test Page</h1>
+    <p>This tests the backend API directly from the browser.</p>
+
+    <div>
+        <input type="text" id="domain" placeholder="Enter domain (e.g., test.com)" value="browser-debug.com">
+        <button onclick="testStart()">Test POST /backend/onboarding/start</button>
+    </div>
+
+    <div id="orgIdSection" style="margin-top: 20px; display: none;">
+        <input type="text" id="orgId" placeholder="Organization ID">
+        <button onclick="testStatus()">Test GET /backend/onboarding/status</button>
+    </div>
+
+    <h3>Results:</h3>
+    <pre id="results">Click a button to test...</pre>
+
+    <script>
+        function log(msg) {
+            const results = document.getElementById('results');
+            results.textContent += '\n' + new Date().toLocaleTimeString() + ': ' + msg;
+            console.log(msg);
+        }
+
+        async function testStart() {
+            const domain = document.getElementById('domain').value;
+            const url = '/backend/onboarding/start';
+
+            log('Making POST to ' + url);
+            log('Body: ' + JSON.stringify({ domain }));
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ domain })
+                });
+
+                log('Response status: ' + response.status);
+                log('Response headers: ' + JSON.stringify(Object.fromEntries(response.headers.entries())));
+
+                const text = await response.text();
+                log('Response body: ' + text);
+
+                try {
+                    const data = JSON.parse(text);
+                    if (data.organization_id) {
+                        document.getElementById('orgId').value = data.organization_id;
+                        document.getElementById('orgIdSection').style.display = 'block';
+                        log('Got org_id: ' + data.organization_id);
+                    }
+                } catch (e) {
+                    log('Could not parse JSON: ' + e.message);
+                }
+            } catch (err) {
+                log('Fetch error: ' + err.message);
+            }
+        }
+
+        async function testStatus() {
+            const orgId = document.getElementById('orgId').value;
+            const url = '/backend/onboarding/status/' + orgId;
+
+            log('Making GET to ' + url);
+
+            try {
+                const response = await fetch(url);
+                log('Response status: ' + response.status);
+
+                const text = await response.text();
+                log('Response body: ' + text);
+            } catch (err) {
+                log('Fetch error: ' + err.message);
+            }
+        }
+    </script>
+</body>
+</html>

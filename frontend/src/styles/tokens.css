@@ -1,0 +1,464 @@
+/**
+ * Design System Tokens - Marketing Agent Platform
+ *
+ * Premium Claude-Inspired Design System
+ * Warm coral accent, soft shapes, generous spacing
+ *
+ * Design Philosophy:
+ * - Warm, not cold (coral accent, creamy backgrounds)
+ * - Soft, not sharp (large border radius everywhere)
+ * - Breathing room (generous spacing)
+ * - Elevated, not flat (shadows instead of borders)
+ */
+
+:root {
+  /* ========================================
+     COLOR PALETTE - WARM NEUTRALS
+     ======================================== */
+
+  /* Warm Gray Scale (creamy undertones) */
+  --color-gray-0: #ffffff;
+  --color-gray-50: #faf8f5;      /* Creamy white */
+  --color-gray-100: #f5f2ed;     /* Warm off-white */
+  --color-gray-200: #e8e4dd;     /* Warm light gray */
+  --color-gray-300: #d4cfc6;     /* Warm mid-light */
+  --color-gray-400: #a8a196;     /* Warm medium */
+  --color-gray-500: #7a7267;     /* Warm gray */
+  --color-gray-600: #5c554b;     /* Warm dark gray */
+  --color-gray-700: #433d35;     /* Warm darker */
+  --color-gray-800: #2d2820;     /* Warm very dark */
+  --color-gray-900: #1a1614;     /* Warm near-black */
+  --color-gray-950: #0f0d0b;     /* Warm black */
+
+  /* Primary Accent - Coral/Terracotta (Claude-inspired) */
+  --color-accent-50: #fff7ed;
+  --color-accent-100: #ffedd5;
+  --color-accent-200: #fed7aa;
+  --color-accent-300: #fdba74;
+  --color-accent-400: #fb923c;
+  --color-accent-500: #f97316;   /* Primary coral */
+  --color-accent-600: #ea580c;
+  --color-accent-700: #c2410c;
+  --color-accent-800: #9a3412;
+  --color-accent-900: #7c2d12;
+  --color-accent-950: #431407;
+
+  /* Secondary - Warm Indigo (for special features like Kata) */
+  --color-secondary-50: #f5f3ff;
+  --color-secondary-100: #ede9fe;
+  --color-secondary-200: #ddd6fe;
+  --color-secondary-300: #c4b5fd;
+  --color-secondary-400: #a78bfa;
+  --color-secondary-500: #8b5cf6;
+  --color-secondary-600: #7c3aed;
+  --color-secondary-700: #6d28d9;
+  --color-secondary-800: #5b21b6;
+  --color-secondary-900: #4c1d95;
+  --color-secondary-950: #2e1065;
+
+  /* Success - Warm Green */
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-200: #bbf7d0;
+  --color-success-300: #86efac;
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+  --color-success-800: #166534;
+  --color-success-900: #14532d;
+  --color-success-950: #052e16;
+
+  /* Warning - Warm Amber */
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+  --color-warning-800: #92400e;
+  --color-warning-900: #78350f;
+  --color-warning-950: #451a03;
+
+  /* Error - Warm Red */
+  --color-error-50: #fef2f2;
+  --color-error-100: #fee2e2;
+  --color-error-200: #fecaca;
+  --color-error-300: #fca5a5;
+  --color-error-400: #f87171;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+  --color-error-700: #b91c1c;
+  --color-error-800: #991b1b;
+  --color-error-900: #7f1d1d;
+  --color-error-950: #450a0a;
+
+  /* ========================================
+     TYPOGRAPHY
+     ======================================== */
+
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
+  --font-family-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Font Sizes - Slightly larger for premium feel */
+  --font-size-xs: 0.75rem;      /* 12px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 0.9375rem;  /* 15px - slightly larger base */
+  --font-size-lg: 1.0625rem;    /* 17px */
+  --font-size-xl: 1.25rem;      /* 20px */
+  --font-size-2xl: 1.5rem;      /* 24px */
+  --font-size-3xl: 1.875rem;    /* 30px */
+  --font-size-4xl: 2.25rem;     /* 36px */
+  --font-size-5xl: 3rem;        /* 48px */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+
+  /* ========================================
+     SPACING - Generous for breathing room
+     ======================================== */
+
+  --spacing-0: 0;
+  --spacing-px: 1px;
+  --spacing-0-5: 0.125rem;   /* 2px */
+  --spacing-1: 0.25rem;      /* 4px */
+  --spacing-1-5: 0.375rem;   /* 6px */
+  --spacing-2: 0.5rem;       /* 8px */
+  --spacing-2-5: 0.625rem;   /* 10px */
+  --spacing-3: 0.75rem;      /* 12px */
+  --spacing-3-5: 0.875rem;   /* 14px */
+  --spacing-4: 1rem;         /* 16px */
+  --spacing-5: 1.25rem;      /* 20px */
+  --spacing-6: 1.5rem;       /* 24px */
+  --spacing-7: 1.75rem;      /* 28px */
+  --spacing-8: 2rem;         /* 32px */
+  --spacing-9: 2.25rem;      /* 36px */
+  --spacing-10: 2.5rem;      /* 40px */
+  --spacing-12: 3rem;        /* 48px */
+  --spacing-14: 3.5rem;      /* 56px */
+  --spacing-16: 4rem;        /* 64px */
+  --spacing-20: 5rem;        /* 80px */
+  --spacing-24: 6rem;        /* 96px */
+
+  /* ========================================
+     BORDER RADIUS - Soft, rounded shapes
+     ======================================== */
+
+  --radius-none: 0;
+  --radius-sm: 0.375rem;     /* 6px */
+  --radius-md: 0.5rem;       /* 8px */
+  --radius-lg: 0.75rem;      /* 12px */
+  --radius-xl: 1rem;         /* 16px */
+  --radius-2xl: 1.25rem;     /* 20px */
+  --radius-3xl: 1.5rem;      /* 24px */
+  --radius-4xl: 2rem;        /* 32px */
+  --radius-full: 9999px;
+
+  /* ========================================
+     SHADOWS - Warm, elevated feel
+     ======================================== */
+
+  /* Warm shadows (slightly tinted, not pure black) */
+  --shadow-xs: 0 1px 2px 0 rgb(26 22 20 / 0.04);
+  --shadow-sm: 0 1px 3px 0 rgb(26 22 20 / 0.08), 0 1px 2px -1px rgb(26 22 20 / 0.08);
+  --shadow-md: 0 4px 6px -1px rgb(26 22 20 / 0.08), 0 2px 4px -2px rgb(26 22 20 / 0.06);
+  --shadow-lg: 0 10px 15px -3px rgb(26 22 20 / 0.08), 0 4px 6px -4px rgb(26 22 20 / 0.06);
+  --shadow-xl: 0 20px 25px -5px rgb(26 22 20 / 0.1), 0 8px 10px -6px rgb(26 22 20 / 0.08);
+  --shadow-2xl: 0 25px 50px -12px rgb(26 22 20 / 0.2);
+  --shadow-inner: inset 0 2px 4px 0 rgb(26 22 20 / 0.04);
+  --shadow-none: 0 0 #0000;
+
+  /* Glow Shadows - Accent colored */
+  --shadow-glow-accent: 0 0 24px rgb(249 115 22 / 0.25);
+  --shadow-glow-secondary: 0 0 24px rgb(139 92 246 / 0.25);
+  --shadow-glow-success: 0 0 20px rgb(34 197 94 / 0.2);
+  --shadow-glow-error: 0 0 20px rgb(239 68 68 / 0.2);
+
+  /* Card shadows - for elevation */
+  --shadow-card: 0 2px 8px -2px rgb(26 22 20 / 0.08), 0 4px 16px -4px rgb(26 22 20 / 0.06);
+  --shadow-card-hover: 0 8px 24px -4px rgb(26 22 20 / 0.12), 0 4px 12px -2px rgb(26 22 20 / 0.08);
+
+  /* ========================================
+     TRANSITIONS - Smooth, premium feel
+     ======================================== */
+
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slower: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ========================================
+     Z-INDEX
+     ======================================== */
+
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+  --z-max: 9999;
+
+  /* ========================================
+     LIGHT THEME (Default) - Warm & Creamy
+     ======================================== */
+
+  /* Backgrounds */
+  --color-bg-base: var(--color-gray-50);        /* Page background - creamy */
+  --color-bg-surface: var(--color-gray-0);      /* Card surface - white */
+  --color-bg-surface-hover: var(--color-gray-100);
+  --color-bg-elevated: var(--color-gray-0);     /* Elevated cards */
+  --color-bg-muted: var(--color-gray-100);      /* Subtle backgrounds */
+  --color-bg-overlay: rgb(26 22 20 / 0.6);      /* Modal backdrop - warm */
+
+  /* Text */
+  --color-text-primary: var(--color-gray-900);
+  --color-text-secondary: var(--color-gray-600);
+  --color-text-tertiary: var(--color-gray-500);
+  --color-text-muted: var(--color-gray-400);
+  --color-text-inverse: var(--color-gray-50);
+  --color-text-link: var(--color-accent-600);
+  --color-text-link-hover: var(--color-accent-700);
+
+  /* Borders */
+  --color-border: var(--color-gray-200);
+  --color-border-hover: var(--color-gray-300);
+  --color-border-focus: var(--color-accent-500);
+  --color-border-subtle: var(--color-gray-100);
+
+  /* Interactive - Using coral accent */
+  --color-interactive: var(--color-accent-500);
+  --color-interactive-hover: var(--color-accent-600);
+  --color-interactive-active: var(--color-accent-700);
+  --color-interactive-muted: var(--color-accent-100);
+
+  /* Accent helpers */
+  --color-accent: var(--color-accent-500);
+  --color-accent-hover: var(--color-accent-600);
+  --color-accent-light: rgb(249 115 22 / 0.12);
+  --color-accent-lighter: rgb(249 115 22 / 0.06);
+  --color-accent-subtle: var(--color-accent-50);
+  --color-accent-alpha-20: rgb(249 115 22 / 0.2);
+  --color-accent-alpha-40: rgb(249 115 22 / 0.4);
+
+  /* Semantic color helpers for components */
+  --color-success: var(--color-success-500);
+  --color-success-subtle: var(--color-success-50);
+  --color-warning: var(--color-warning-500);
+  --color-warning-subtle: var(--color-warning-50);
+  --color-error: var(--color-error-500);
+  --color-error-subtle: var(--color-error-50);
+
+  /* Shadow helpers for elevation */
+  --shadow-elevated: var(--shadow-lg);
+
+  /* Semantic Backgrounds */
+  --color-success-bg: rgb(34 197 94 / 0.1);
+  --color-success-border: var(--color-success-200);
+  --color-warning-bg: rgb(245 158 11 / 0.1);
+  --color-warning-border: var(--color-warning-200);
+  --color-error-bg: rgb(239 68 68 / 0.1);
+  --color-error-border: var(--color-error-200);
+  --color-info-bg: rgb(249 115 22 / 0.1);
+  --color-info-border: var(--color-accent-200);
+
+  /* Focus Ring */
+  --color-focus-ring: var(--color-accent-500);
+  --focus-ring: 0 0 0 2px var(--color-bg-surface), 0 0 0 4px var(--color-focus-ring);
+
+  /* Scrollbar */
+  --color-scrollbar-track: var(--color-gray-100);
+  --color-scrollbar-thumb: var(--color-gray-300);
+  --color-scrollbar-thumb-hover: var(--color-gray-400);
+}
+
+/* ========================================
+   DARK THEME - Warm & Cozy
+   ======================================== */
+
+[data-theme="dark"],
+.dark {
+  /* Backgrounds - Warm darks, not cold */
+  --color-bg-base: var(--color-gray-950);       /* Deep warm black */
+  --color-bg-surface: var(--color-gray-900);    /* Card surface */
+  --color-bg-surface-hover: var(--color-gray-800);
+  --color-bg-elevated: var(--color-gray-800);   /* Elevated above surface */
+  --color-bg-muted: var(--color-gray-800);
+  --color-bg-overlay: rgb(15 13 11 / 0.8);      /* Warm overlay */
+
+  /* Text - Softer, not harsh white */
+  --color-text-primary: var(--color-gray-100);
+  --color-text-secondary: var(--color-gray-300);
+  --color-text-tertiary: var(--color-gray-400);
+  --color-text-muted: var(--color-gray-500);
+  --color-text-inverse: var(--color-gray-900);
+  --color-text-link: var(--color-accent-400);
+  --color-text-link-hover: var(--color-accent-300);
+
+  /* Borders - Warm tones */
+  --color-border: var(--color-gray-700);
+  --color-border-hover: var(--color-gray-600);
+  --color-border-focus: var(--color-accent-500);
+  --color-border-subtle: var(--color-gray-800);
+
+  /* Interactive */
+  --color-interactive: var(--color-accent-500);
+  --color-interactive-hover: var(--color-accent-400);
+  --color-interactive-active: var(--color-accent-600);
+  --color-interactive-muted: rgb(249 115 22 / 0.15);
+
+  /* Accent in dark mode */
+  --color-accent-light: rgb(249 115 22 / 0.15);
+  --color-accent-lighter: rgb(249 115 22 / 0.08);
+  --color-accent-subtle: var(--color-accent-900);
+  --color-accent-alpha-20: rgb(249 115 22 / 0.2);
+  --color-accent-alpha-40: rgb(249 115 22 / 0.4);
+
+  /* Semantic color helpers for dark mode */
+  --color-success-subtle: var(--color-success-900);
+  --color-warning-subtle: var(--color-warning-900);
+  --color-error-subtle: var(--color-error-900);
+
+  /* Semantic Backgrounds - Darker versions */
+  --color-success-bg: rgb(34 197 94 / 0.15);
+  --color-success-border: var(--color-success-800);
+  --color-warning-bg: rgb(245 158 11 / 0.15);
+  --color-warning-border: var(--color-warning-800);
+  --color-error-bg: rgb(239 68 68 / 0.15);
+  --color-error-border: var(--color-error-800);
+  --color-info-bg: rgb(249 115 22 / 0.15);
+  --color-info-border: var(--color-accent-800);
+
+  /* Shadows - More pronounced in dark */
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.2), 0 1px 2px -1px rgb(0 0 0 / 0.2);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.25), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.25);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.35), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.5);
+  --shadow-card: 0 2px 8px -2px rgb(0 0 0 / 0.3), 0 4px 16px -4px rgb(0 0 0 / 0.25);
+  --shadow-card-hover: 0 8px 24px -4px rgb(0 0 0 / 0.4), 0 4px 12px -2px rgb(0 0 0 / 0.3);
+
+  /* Scrollbar */
+  --color-scrollbar-track: var(--color-gray-800);
+  --color-scrollbar-thumb: var(--color-gray-600);
+  --color-scrollbar-thumb-hover: var(--color-gray-500);
+}
+
+/* Auto dark mode based on system preference */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg-base: var(--color-gray-950);
+    --color-bg-surface: var(--color-gray-900);
+    --color-bg-surface-hover: var(--color-gray-800);
+    --color-bg-elevated: var(--color-gray-800);
+    --color-bg-muted: var(--color-gray-800);
+    --color-bg-overlay: rgb(15 13 11 / 0.8);
+
+    --color-text-primary: var(--color-gray-100);
+    --color-text-secondary: var(--color-gray-300);
+    --color-text-tertiary: var(--color-gray-400);
+    --color-text-muted: var(--color-gray-500);
+    --color-text-inverse: var(--color-gray-900);
+    --color-text-link: var(--color-accent-400);
+    --color-text-link-hover: var(--color-accent-300);
+
+    --color-border: var(--color-gray-700);
+    --color-border-hover: var(--color-gray-600);
+    --color-border-subtle: var(--color-gray-800);
+
+    --color-interactive-hover: var(--color-accent-400);
+    --color-interactive-active: var(--color-accent-600);
+    --color-interactive-muted: rgb(249 115 22 / 0.15);
+
+    --color-accent-light: rgb(249 115 22 / 0.15);
+    --color-accent-lighter: rgb(249 115 22 / 0.08);
+
+    --color-success-bg: rgb(34 197 94 / 0.15);
+    --color-success-border: var(--color-success-800);
+    --color-warning-bg: rgb(245 158 11 / 0.15);
+    --color-warning-border: var(--color-warning-800);
+    --color-error-bg: rgb(239 68 68 / 0.15);
+    --color-error-border: var(--color-error-800);
+    --color-info-bg: rgb(249 115 22 / 0.15);
+    --color-info-border: var(--color-accent-800);
+
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.2), 0 1px 2px -1px rgb(0 0 0 / 0.2);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.25), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.25);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.35), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+    --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.5);
+    --shadow-card: 0 2px 8px -2px rgb(0 0 0 / 0.3), 0 4px 16px -4px rgb(0 0 0 / 0.25);
+    --shadow-card-hover: 0 8px 24px -4px rgb(0 0 0 / 0.4), 0 4px 12px -2px rgb(0 0 0 / 0.3);
+
+    --color-scrollbar-track: var(--color-gray-800);
+    --color-scrollbar-thumb: var(--color-gray-600);
+    --color-scrollbar-thumb-hover: var(--color-gray-500);
+  }
+}
+
+/* ========================================
+   GLOBAL UTILITY STYLES
+   ======================================== */
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-scrollbar-track);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-scrollbar-thumb);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-scrollbar-thumb-hover);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-accent-500);
+  color: white;
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

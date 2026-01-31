@@ -1,0 +1,60 @@
+{
+  "sequence_id": "8c52a03f-e6d1-4753-8866-ae9c45e2c830",
+  "sequence_type": "nurture",
+  "campaign_id": "test-sequence-nurture-001",
+  "timing_schedule": [
+    1,
+    4,
+    8,
+    12,
+    18
+  ],
+  "total_emails": 5,
+  "brand_data": {
+    "primary_color": "#007bff",
+    "font_family": "Arial"
+  },
+  "created_at": "2026-01-31T01:42:42.272015",
+  "emails": [
+    {
+      "day": 1,
+      "position": 1,
+      "subject": "5 Game-Changing Tips You Need to Know",
+      "theme": "Educational Content",
+      "goal": "Provide value and establish expertise",
+      "preview_text": "Unlock insider strategies to transform your approach starting today"
+    },
+    {
+      "day": 4,
+      "position": 2,
+      "subject": "5 Industry Trends That Will Transform Your Business",
+      "theme": "Industry Insights",
+      "goal": "Share relevant trends and data",
+      "preview_text": "Discover what's shaping your industry's future and how to stay ahead"
+    },
+    {
+      "day": 8,
+      "position": 3,
+      "subject": "Struggling to keep up? Here's why...",
+      "theme": "Problem-Solution",
+      "goal": "Address common pain points",
+      "preview_text": "The hidden reasons you're feeling overwhelmed (and what to do about it)"
+    },
+    {
+      "day": 12,
+      "position": 4,
+      "subject": "See How Sarah Doubled Her Results [Case Study]",
+      "theme": "Case Study",
+      "goal": "Demonstrate real-world results",
+      "preview_text": "From struggling to succeed: A real transformation story you won't want to miss"
+    },
+    {
+      "day": 18,
+      "position": 5,
+      "subject": "5 Game-Changing Tips You Can Use Today",
+      "theme": "Tips & Best Practices",
+      "goal": "Actionable advice",
+      "preview_text": "Transform your results with these proven strategies - starting right now"
+    }
+  ]
+}

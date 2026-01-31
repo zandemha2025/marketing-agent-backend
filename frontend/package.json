@@ -1,0 +1,45 @@
+{
+  "name": "marketing-agent-v2",
+  "version": "2.0.0",
+  "description": "AI-Powered Marketing Campaign Platform - Premium B2B SaaS",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --mode development",
+    "dev:staging": "vite --mode staging",
+    "build": "vite build --mode production",
+    "build:staging": "vite build --mode staging",
+    "build:dev": "vite build --mode development",
+    "preview": "vite preview",
+    "preview:staging": "vite preview --port 3002",
+    "test:e2e": "npx playwright test",
+    "test:e2e:ui": "npx playwright test --ui",
+    "test:e2e:report": "npx playwright show-report",
+    "version:check": "node -e \"const pkg = require('./package.json'); console.log('Package Version:', pkg.version);\"",
+    "clean": "rm -rf dist node_modules/.vite"
+  },
+  "dependencies": {
+    "@tiptap/core": "^2.2.0",
+    "@tiptap/extension-highlight": "^2.2.0",
+    "@tiptap/extension-placeholder": "^2.2.0",
+    "@tiptap/extension-typography": "^2.2.0",
+    "@tiptap/extension-underline": "^2.2.0",
+    "@tiptap/pm": "^2.2.0",
+    "@tiptap/react": "^2.2.0",
+    "@tiptap/starter-kit": "^2.2.0",
+    "@tiptap/suggestion": "^2.2.0",
+    "convex": "^1.31.6",
+    "lucide-react": "^0.563.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tippy.js": "^6.3.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "baseline-browser-mapping": "^2.9.19",
+    "vite": "^5.0.12"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "email_id": "a06a7f28-ff40-4255-b9ef-3c9bee604bdb",
+  "email_type": "nurture",
+  "campaign_id": "test-nurture-001",
+  "subject": "Test Nurture Email",
+  "subject_lines": [
+    "\ud83c\udfaf Quick tips to level up your skills",
+    "Want to grow with us? Here's how",
+    "The next step in your journey starts here"
+  ],
+  "preview_text": "Discover proven strategies to grow your business without working longer hours",
+  "created_at": "2026-01-31T01:40:59.099113"
+}

@@ -1,0 +1,403 @@
+{
+  "test_suite": "Comprehensive E2E Test Suite",
+  "started_at": "2026-01-31T01:47:49.507938",
+  "base_url": "http://localhost:8000",
+  "workstreams": {
+    "brand_onboarding": {
+      "tests": [
+        {
+          "name": "Can create organization",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "organization_id": "b7797bfd19a3",
+            "status": "in_progress"
+          },
+          "timestamp": "2026-01-31T01:47:49.979263"
+        },
+        {
+          "name": "Can run onboarding pipeline",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "status": "complete",
+            "progress": 1.0
+          },
+          "timestamp": "2026-01-31T01:47:51.987361"
+        },
+        {
+          "name": "Knowledge base has brand_data.name",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "brand_name": "Test-Brand-1769842069"
+          },
+          "timestamp": "2026-01-31T01:47:51.996501"
+        },
+        {
+          "name": "Knowledge base has brand_data.voice.tone",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "voice_tone": [
+              "professional"
+            ]
+          },
+          "timestamp": "2026-01-31T01:47:51.996514"
+        },
+        {
+          "name": "Knowledge base has market_data.competitors",
+          "passed": false,
+          "skipped": false,
+          "details": {
+            "competitor_count": 0
+          },
+          "timestamp": "2026-01-31T01:47:51.996517"
+        },
+        {
+          "name": "Knowledge base has audiences_data.segments",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "segment_count": 2
+          },
+          "timestamp": "2026-01-31T01:47:51.996521"
+        }
+      ],
+      "summary": {
+        "total": 6,
+        "passed": 5,
+        "failed": 1,
+        "skipped": 0
+      }
+    },
+    "campaign_orchestrator": {
+      "tests": [
+        {
+          "name": "Can create campaign",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "campaign_id": "53d6b1181cb4",
+            "status": "draft"
+          },
+          "timestamp": "2026-01-31T01:47:52.016581"
+        },
+        {
+          "name": "Can execute campaign (status changes to in_progress)",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "status": "in_progress",
+            "message": "Campaign execution started directly (Celery unavailable). Check status endpoint for progress."
+          },
+          "timestamp": "2026-01-31T01:47:52.025230"
+        },
+        {
+          "name": "Sequential LLM calls working (no concurrent timeouts)",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "status": "in_progress",
+            "progress": null
+          },
+          "timestamp": "2026-01-31T01:47:57.037222"
+        },
+        {
+          "name": "Rate limiter functioning",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "note": "No 429 errors on normal usage"
+          },
+          "timestamp": "2026-01-31T01:47:58.560544"
+        }
+      ],
+      "summary": {
+        "total": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0
+      }
+    },
+    "ai_chat_context": {
+      "tests": [
+        {
+          "name": "Can create conversation",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "conversation_id": "3353e2b189a7"
+          },
+          "timestamp": "2026-01-31T01:47:58.583768"
+        },
+        {
+          "name": "Can send message",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "response_preview": "According to the brand information provided, your brand voice is defined as:\n\nTone: Professional\nPer"
+          },
+          "timestamp": "2026-01-31T01:48:04.900591"
+        },
+        {
+          "name": "Brand context loaded into prompts",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "note": "Response contains brand-related terms"
+          },
+          "timestamp": "2026-01-31T01:48:04.900616"
+        }
+      ],
+      "summary": {
+        "total": 3,
+        "passed": 3,
+        "failed": 0,
+        "skipped": 0
+      }
+    },
+    "kata_lab": {
+      "tests": [
+        {
+          "name": "Script builder works",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "job_id": "test_job_001",
+            "job_type": "synthetic_influencer"
+          },
+          "timestamp": "2026-01-31T01:48:04.986742"
+        },
+        {
+          "name": "Synthetic influencer job creation works",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "status": "pending",
+            "has_script": true
+          },
+          "timestamp": "2026-01-31T01:48:04.986762"
+        },
+        {
+          "name": "Video compositor job creation works",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "job_type": "video_composite"
+          },
+          "timestamp": "2026-01-31T01:48:04.986766"
+        },
+        {
+          "name": "Mock mode fallback works",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "has_video_keys": false,
+            "mode": "mock"
+          },
+          "timestamp": "2026-01-31T01:48:04.986771"
+        },
+        {
+          "name": "API endpoint /api/kata/jobs accessible",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "status_code": 200
+          },
+          "timestamp": "2026-01-31T01:48:04.996010"
+        }
+      ],
+      "summary": {
+        "total": 5,
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0
+      }
+    },
+    "asset_generation": {
+      "tests": [
+        {
+          "name": "POST /api/assets/generate-image returns 200 (not 405)",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "status_code": 200,
+            "is_405": false
+          },
+          "timestamp": "2026-01-31T01:48:30.711086"
+        },
+        {
+          "name": "Image generation works (mock or real)",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "url": "/outputs/generated_images/afdc0440014f4a36.png",
+            "asset_id": "afdc0440014f4a36",
+            "backend_used": "unknown"
+          },
+          "timestamp": "2026-01-31T01:48:30.711122"
+        },
+        {
+          "name": "Multiple styles supported",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "styles_tested": [
+              "photorealistic",
+              "artistic",
+              "minimal"
+            ],
+            "styles_supported": [
+              "photorealistic",
+              "artistic",
+              "minimal"
+            ]
+          },
+          "timestamp": "2026-01-31T01:49:41.490628"
+        }
+      ],
+      "summary": {
+        "total": 3,
+        "passed": 3,
+        "failed": 0,
+        "skipped": 0
+      }
+    },
+    "landing_pages": {
+      "tests": [
+        {
+          "name": "Can generate landing page",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "page_id": "d98ce12e-4d51-4f30-8adf-e692664d39c6",
+            "preview_url": "/preview/landing-pages/d98ce12e-4d51-4f30-8adf-e692664d39c6"
+          },
+          "timestamp": "2026-01-31T01:50:29.024512"
+        },
+        {
+          "name": "All templates work (product_launch, lead_gen, event, webinar)",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "templates_tested": [
+              "product_launch",
+              "lead_gen",
+              "event",
+              "webinar"
+            ],
+            "templates_working": [
+              "product_launch",
+              "lead_gen",
+              "event",
+              "webinar"
+            ]
+          },
+          "timestamp": "2026-01-31T01:53:49.957224"
+        },
+        {
+          "name": "HTML/CSS generated",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "has_html": true,
+            "has_css": true,
+            "html_length": 10526,
+            "css_length": 2770
+          },
+          "timestamp": "2026-01-31T01:53:49.957239"
+        },
+        {
+          "name": "Preview URL works",
+          "passed": false,
+          "skipped": false,
+          "details": {
+            "preview_url": null
+          },
+          "timestamp": "2026-01-31T01:53:49.957243"
+        }
+      ],
+      "summary": {
+        "total": 4,
+        "passed": 3,
+        "failed": 1,
+        "skipped": 0
+      }
+    },
+    "email_marketing": {
+      "tests": [
+        {
+          "name": "Can generate single email",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "email_id": "cec6ccfd-6a78-4a9f-b438-8f6b89ae2118",
+            "html_length": 4275
+          },
+          "timestamp": "2026-01-31T01:53:54.068817"
+        },
+        {
+          "name": "Can generate email sequence",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "sequence_id": "abe65980-8cbf-4104-9eda-8609c84160f0",
+            "email_count": 3
+          },
+          "timestamp": "2026-01-31T01:54:19.451714"
+        },
+        {
+          "name": "All email types work",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "types_tested": [
+              "promotional",
+              "welcome",
+              "nurture",
+              "newsletter",
+              "transactional"
+            ],
+            "types_working": [
+              "promotional",
+              "welcome",
+              "nurture",
+              "newsletter",
+              "transactional"
+            ]
+          },
+          "timestamp": "2026-01-31T01:54:39.218631"
+        },
+        {
+          "name": "3+ subject line variations generated",
+          "passed": true,
+          "skipped": false,
+          "details": {
+            "subject_line_count": 3,
+            "subject_lines": [
+              "Confirm your recent transaction \ud83d\udccb",
+              "Quick verification needed for your account",
+              "Please review your latest activity"
+            ]
+          },
+          "timestamp": "2026-01-31T01:54:39.218651"
+        }
+      ],
+      "summary": {
+        "total": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0
+      }
+    }
+  },
+  "summary": {
+    "total_tests": 29,
+    "passed": 27,
+    "failed": 2,
+    "skipped": 0,
+    "pass_rate": "93.1%"
+  },
+  "completed_at": "2026-01-31T01:54:39.220289"
+}

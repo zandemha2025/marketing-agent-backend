@@ -1,0 +1,21 @@
+/**
+ * Onboarding Welcome - Premium styling
+ * Uses shared styles from OnboardingPage.css (.onboarding-card, .onboarding-header, etc.)
+ */
+
+/* Welcome form specific styles */
+.welcome-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-5);
+}
+
+/* Note at bottom */
+.welcome-note {
+    text-align: center;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin-top: var(--spacing-6);
+    padding-top: var(--spacing-5);
+    border-top: 1px solid var(--color-border-subtle);
+}

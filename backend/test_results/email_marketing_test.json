@@ -1,0 +1,527 @@
+{
+  "test_run_timestamp": "2026-01-31T01:40:46.982014",
+  "tests": [
+    {
+      "name": "email_generation_promotional",
+      "passed": true,
+      "details": {
+        "email_type": "promotional",
+        "email_id": "cee36c01-77c2-4410-b36f-59a49756cd6f",
+        "html_validation": {
+          "valid": true,
+          "checks": {
+            "has_doctype": true,
+            "has_html_tag": true,
+            "has_body": true,
+            "has_table_structure": true,
+            "has_inline_styles": true,
+            "max_width_600": true,
+            "has_content": true
+          },
+          "html_length": 4449
+        },
+        "text_validation": {
+          "valid": true,
+          "checks": {
+            "not_empty": true,
+            "no_html_tags": true,
+            "has_content": true
+          },
+          "text_length": 999
+        },
+        "subject_lines_count": 3,
+        "subject_lines": [
+          "\ud83c\udf81 A Special Surprise Inside Just for You",
+          "Don't Miss What We Have in Store for You",
+          "Your Exclusive Preview is Ready"
+        ],
+        "preview_text": "Get an exclusive first look at our new collection + early access savings inside",
+        "preview_url": "/preview/emails/cee36c01-77c2-4410-b36f-59a49756cd6f",
+        "file_path": "outputs/emails/promotional_20260131_014050_cee36c01",
+        "file_saved": true
+      },
+      "timestamp": "2026-01-31T01:40:50.813168"
+    },
+    {
+      "name": "email_generation_welcome",
+      "passed": true,
+      "details": {
+        "email_type": "welcome",
+        "email_id": "977e365d-d8ab-4c18-9b79-0a6a04d1ece9",
+        "html_validation": {
+          "valid": true,
+          "checks": {
+            "has_doctype": true,
+            "has_html_tag": true,
+            "has_body": true,
+            "has_table_structure": true,
+            "has_inline_styles": true,
+            "max_width_600": true,
+            "has_content": true
+          },
+          "html_length": 4812
+        },
+        "text_validation": {
+          "valid": true,
+          "checks": {
+            "not_empty": true,
+            "no_html_tags": true,
+            "has_content": true
+          },
+          "text_length": 1238
+        },
+        "subject_lines_count": 3,
+        "subject_lines": [
+          "\ud83d\udc4b Welcome to the family! Let's get started",
+          "Your journey with us begins now",
+          "Thanks for joining! Here's what's next..."
+        ],
+        "preview_text": "Thanks for joining! Here's your exclusive member welcome gift waiting inside \ud83c\udf81",
+        "preview_url": "/preview/emails/977e365d-d8ab-4c18-9b79-0a6a04d1ece9",
+        "file_path": "outputs/emails/welcome_20260131_014055_977e365d",
+        "file_saved": true
+      },
+      "timestamp": "2026-01-31T01:40:55.004814"
+    },
+    {
+      "name": "email_generation_nurture",
+      "passed": true,
+      "details": {
+        "email_type": "nurture",
+        "email_id": "a06a7f28-ff40-4255-b9ef-3c9bee604bdb",
+        "html_validation": {
+          "valid": true,
+          "checks": {
+            "has_doctype": true,
+            "has_html_tag": true,
+            "has_body": true,
+            "has_table_structure": true,
+            "has_inline_styles": true,
+            "max_width_600": true,
+            "has_content": true
+          },
+          "html_length": 4861
+        },
+        "text_validation": {
+          "valid": true,
+          "checks": {
+            "not_empty": true,
+            "no_html_tags": true,
+            "has_content": true
+          },
+          "text_length": 1015
+        },
+        "subject_lines_count": 3,
+        "subject_lines": [
+          "\ud83c\udfaf Quick tips to level up your skills",
+          "Want to grow with us? Here's how",
+          "The next step in your journey starts here"
+        ],
+        "preview_text": "Discover proven strategies to grow your business without working longer hours",
+        "preview_url": "/preview/emails/a06a7f28-ff40-4255-b9ef-3c9bee604bdb",
+        "file_path": "outputs/emails/nurture_20260131_014059_a06a7f28",
+        "file_saved": true
+      },
+      "timestamp": "2026-01-31T01:40:59.099442"
+    },
+    {
+      "name": "email_generation_newsletter",
+      "passed": true,
+      "details": {
+        "email_type": "newsletter",
+        "email_id": "8e539599-3fbf-46de-b15c-34711bd28fee",
+        "html_validation": {
+          "valid": true,
+          "checks": {
+            "has_doctype": true,
+            "has_html_tag": true,
+            "has_body": true,
+            "has_table_structure": true,
+            "has_inline_styles": true,
+            "max_width_600": true,
+            "has_content": true
+          },
+          "html_length": 4971
+        },
+        "text_validation": {
+          "valid": true,
+          "checks": {
+            "not_empty": true,
+            "no_html_tags": true,
+            "has_content": true
+          },
+          "text_length": 1036
+        },
+        "subject_lines_count": 3,
+        "subject_lines": [
+          "\ud83d\udceb Your Weekly Update Has Arrived",
+          "Take a peek at what's new this week",
+          "Fresh content inside - Just for you"
+        ],
+        "preview_text": "Get insider tips, exclusive content, and this week's must-read stories.",
+        "preview_url": "/preview/emails/8e539599-3fbf-46de-b15c-34711bd28fee",
+        "file_path": "outputs/emails/newsletter_20260131_014101_8e539599",
+        "file_saved": true
+      },
+      "timestamp": "2026-01-31T01:41:01.658062"
+    },
+    {
+      "name": "email_generation_transactional",
+      "passed": true,
+      "details": {
+        "email_type": "transactional",
+        "email_id": "345445cb-2c85-4e41-bf91-2d6b9ee697e0",
+        "html_validation": {
+          "valid": true,
+          "checks": {
+            "has_doctype": true,
+            "has_html_tag": true,
+            "has_body": true,
+            "has_table_structure": true,
+            "has_inline_styles": true,
+            "max_width_600": true,
+            "has_content": true
+          },
+          "html_length": 5690
+        },
+        "text_validation": {
+          "valid": true,
+          "checks": {
+            "not_empty": true,
+            "no_html_tags": true,
+            "has_content": true
+          },
+          "text_length": 1215
+        },
+        "subject_lines_count": 3,
+        "subject_lines": [
+          "\ud83d\udce7 Quick verification needed",
+          "Please confirm your recent action",
+          "Important: Action required for your account"
+        ],
+        "preview_text": "Please verify your recent account activity - we noticed something unusual",
+        "preview_url": "/preview/emails/345445cb-2c85-4e41-bf91-2d6b9ee697e0",
+        "file_path": "outputs/emails/transactional_20260131_014104_345445cb",
+        "file_saved": true
+      },
+      "timestamp": "2026-01-31T01:41:04.733055"
+    },
+    {
+      "name": "sequence_generation_welcome",
+      "passed": true,
+      "details": {
+        "sequence_type": "welcome",
+        "sequence_id": "1c3e97ae-2db9-4c86-8202-d3c975cad463",
+        "total_emails": 5,
+        "timing_schedule": [
+          1,
+          3,
+          5,
+          7,
+          14
+        ],
+        "email_validations": [
+          {
+            "day": 1,
+            "position": 1,
+            "subject": "\ud83c\udf89 Welcome to the family! Your journey begins here",
+            "html_valid": true,
+            "text_valid": true,
+            "theme": "Welcome & Introduction"
+          },
+          {
+            "day": 3,
+            "position": 2,
+            "subject": "Ready to take your first step? Let's do this!",
+            "html_valid": true,
+            "text_valid": true,
+            "theme": "Getting Started"
+          },
+          {
+            "day": 5,
+            "position": 3,
+            "subject": "Here's what makes us different...",
+            "html_valid": true,
+            "text_valid": true,
+            "theme": "Key Features"
+          },
+          {
+            "day": 7,
+            "position": 4,
+            "subject": "Real Results: Meet Sarah's Amazing Journey",
+            "html_valid": true,
+            "text_valid": true,
+            "theme": "Success Stories"
+          },
+          {
+            "day": 14,
+            "position": 5,
+            "subject": "Your Community Is Here For You \ud83e\udd1d",
+            "html_valid": true,
+            "text_valid": true,
+            "theme": "Community & Support"
+          }
+        ],
+        "all_emails_valid": true,
+        "unique_subjects": true,
+        "file_path": "outputs/emails/sequences/welcome_20260131_014154_1c3e97ae"
+      },
+      "timestamp": "2026-01-31T01:41:54.562910"
+    },
+    {
+      "name": "sequence_generation_nurture",
+      "passed": true,
+      "details": {
+        "sequence_type": "nurture",
+        "sequence_id": "8c52a03f-e6d1-4753-8866-ae9c45e2c830",
+        "total_emails": 5,
+        "timing_schedule": [
+          1,
+          4,
+          8,
+          12,
+          18
+        ],
+        "email_validations": [
+          {
+            "day": 1,
+            "position": 1,
+            "subject": "5 Game-Changing Tips You Need to Know",
+            "html_valid": true,
+            "text_valid": true,
+            "theme": "Educational Content"
+          },
+          {
+            "day": 4,
+            "position": 2,
+            "subject": "5 Industry Trends That Will Transform Your Business",
+            "html_valid": true,
+            "text_valid": true,
+            "theme": "Industry Insights"
+          },
+          {
+            "day": 8,
+            "position": 3,
+            "subject": "Struggling to keep up? Here's why...",
+            "html_valid": true,
+            "text_valid": true,
+            "theme": "Problem-Solution"
+          },
+          {
+            "day": 12,
+            "position": 4,
+            "subject": "See How Sarah Doubled Her Results [Case Study]",
+            "html_valid": true,
+            "text_valid": true,
+            "theme": "Case Study"
+          },
+          {
+            "day": 18,
+            "position": 5,
+            "subject": "5 Game-Changing Tips You Can Use Today",
+            "html_valid": true,
+            "text_valid": true,
+            "theme": "Tips & Best Practices"
+          }
+        ],
+        "all_emails_valid": true,
+        "unique_subjects": true,
+        "file_path": "outputs/emails/sequences/nurture_20260131_014242_8c52a03f"
+      },
+      "timestamp": "2026-01-31T01:42:42.274838"
+    },
+    {
+      "name": "sequence_generation_onboarding",
+      "passed": true,
+      "details": {
+        "sequence_type": "onboarding",
+        "sequence_id": "84b83ea0-d220-4dd2-9ab4-ebc1a680ea40",
+        "total_emails": 5,
+        "timing_schedule": [
+          1,
+          2,
+          4,
+          7,
+          10
+        ],
+        "email_validations": [
+          {
+            "day": 1,
+            "position": 1,
+            "subject": "\ud83c\udf89 Welcome! Let's get you set up in 2 minutes",
+            "html_valid": true,
+            "text_valid": true,
+            "theme": "Welcome & Setup"
+          },
+          {
+            "day": 2,
+            "position": 2,
+            "subject": "Here's your first quick win \ud83c\udfaf",
+            "html_valid": true,
+            "text_valid": true,
+            "theme": "Quick Win"
+          },
+          {
+            "day": 4,
+            "position": 3,
+            "subject": "Here's what makes [Product] truly special",
+            "html_valid": true,
+            "text_valid": true,
+            "theme": "Feature Deep Dive"
+          },
+          {
+            "day": 7,
+            "position": 4,
+            "subject": "Level Up: 5 Pro Tips You Can't Miss",
+            "html_valid": true,
+            "text_valid": true,
+            "theme": "Pro Tips"
+          },
+          {
+            "day": 10,
+            "position": 5,
+            "subject": "Level up with these powerful integrations \ud83d\udd0c",
+            "html_valid": true,
+            "text_valid": true,
+            "theme": "Integration Guide"
+          }
+        ],
+        "all_emails_valid": true,
+        "unique_subjects": true,
+        "file_path": "outputs/emails/sequences/onboarding_20260131_014322_84b83ea0"
+      },
+      "timestamp": "2026-01-31T01:43:22.881157"
+    },
+    {
+      "name": "sequence_generation_re_engagement",
+      "passed": true,
+      "details": {
+        "sequence_type": "re_engagement",
+        "sequence_id": "fb2b939a-8cdd-480e-8eec-82f5b0b44007",
+        "total_emails": 5,
+        "timing_schedule": [
+          1,
+          3,
+          7,
+          14,
+          30
+        ],
+        "email_validations": [
+          {
+            "day": 1,
+            "position": 1,
+            "subject": "Hey [First Name], we've noticed you've been away...",
+            "html_valid": true,
+            "text_valid": true,
+            "theme": "We Miss You"
+          },
+          {
+            "day": 3,
+            "position": 2,
+            "subject": "See what you've been missing! \ud83c\udf1f",
+            "html_valid": true,
+            "text_valid": true,
+            "theme": "What's New"
+          },
+          {
+            "day": 7,
+            "position": 3,
+            "subject": "Here's 20% off to welcome you back! \ud83c\udf81",
+            "html_valid": true,
+            "text_valid": true,
+            "theme": "Special Offer"
+          },
+          {
+            "day": 14,
+            "position": 4,
+            "subject": "How Sarah turned her life around (and you can too)",
+            "html_valid": true,
+            "text_valid": true,
+            "theme": "Success Story"
+          },
+          {
+            "day": 30,
+            "position": 5,
+            "subject": "\ud83d\udc94 This is goodbye (unless you click)",
+            "html_valid": true,
+            "text_valid": true,
+            "theme": "Last Chance"
+          }
+        ],
+        "all_emails_valid": true,
+        "unique_subjects": true,
+        "file_path": "outputs/emails/sequences/re_engagement_20260131_014400_fb2b939a"
+      },
+      "timestamp": "2026-01-31T01:44:00.854716"
+    },
+    {
+      "name": "subject_line_variations",
+      "passed": true,
+      "details": {
+        "subject_lines": [
+          "\ud83c\udf1e Half Off Your Summer Favorites",
+          "Your Summer Style Just Got More Affordable",
+          "Don't Miss This: Summer Collection 50% Off"
+        ],
+        "count": 3,
+        "checks": {
+          "has_3_or_more": true,
+          "all_non_empty": true,
+          "all_under_100_chars": true,
+          "has_variety": true
+        }
+      },
+      "timestamp": "2026-01-31T01:44:04.142469"
+    },
+    {
+      "name": "responsive_email_design",
+      "passed": true,
+      "details": {
+        "checks": {
+          "has_max_width": true,
+          "has_table_layout": true,
+          "has_inline_styles": true,
+          "has_width_100_percent": true,
+          "mobile_friendly_structure": true
+        },
+        "responsive_score": 5,
+        "html_length": 4842
+      },
+      "timestamp": "2026-01-31T01:44:07.916841"
+    },
+    {
+      "name": "file_storage",
+      "passed": true,
+      "details": {
+        "file_path": "outputs/emails/welcome_20260131_014411_ca481271",
+        "checks": {
+          "file_path_returned": true,
+          "directory_exists": true,
+          "html_file_exists": true,
+          "text_file_exists": true,
+          "metadata_exists": true,
+          "preview_exists": true
+        },
+        "metadata": {
+          "email_id": "ca481271-8b05-4d6f-9185-51da61b4984a",
+          "email_type": "welcome",
+          "campaign_id": "test-storage-001",
+          "subject": "Welcome to Our Platform",
+          "subject_lines": [
+            "\ud83d\udc4b Great to have you on board!",
+            "Your journey with us begins today",
+            "Welcome aboard - let's get started"
+          ],
+          "preview_text": "Get started with your free account - exclusive tips & resources await! \ud83c\udf89",
+          "created_at": "2026-01-31T01:44:11.478425"
+        }
+      },
+      "timestamp": "2026-01-31T01:44:11.479195"
+    }
+  ],
+  "summary": {
+    "total": 12,
+    "passed": 12,
+    "failed": 0
+  }
+}

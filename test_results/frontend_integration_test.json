@@ -1,0 +1,484 @@
+{
+  "timestamp": "2026-01-31T07:14:02.038Z",
+  "api_base_url": "http://localhost:8000/api",
+  "tests": [
+    {
+      "name": "API Health Check",
+      "method": "GET",
+      "endpoint": "/health",
+      "url": "http://localhost:8000/api/health",
+      "status": "passed",
+      "statusCode": 200,
+      "responseTime": 30,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"error\":\"Not found\"}"
+    },
+    {
+      "name": "API Root",
+      "method": "GET",
+      "endpoint": "/",
+      "url": "http://localhost:8000/api/",
+      "status": "passed",
+      "statusCode": 200,
+      "responseTime": 4,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"error\":\"Not found\"}"
+    },
+    {
+      "name": "Onboarding Start",
+      "method": "POST",
+      "endpoint": "/onboarding/start",
+      "url": "http://localhost:8000/api/onboarding/start",
+      "status": "passed",
+      "statusCode": 403,
+      "responseTime": 133,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "name": "List Campaigns",
+      "method": "GET",
+      "endpoint": "/campaigns?organization_id=test-org",
+      "url": "http://localhost:8000/api/campaigns?organization_id=test-org",
+      "status": "passed",
+      "statusCode": 200,
+      "responseTime": 2,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"error\":\"Not found\"}"
+    },
+    {
+      "name": "List Conversations",
+      "method": "GET",
+      "endpoint": "/chat/conversations?organization_id=test-org",
+      "url": "http://localhost:8000/api/chat/conversations?organization_id=test-org",
+      "status": "passed",
+      "statusCode": 403,
+      "responseTime": 1,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "name": "List Kata Jobs",
+      "method": "GET",
+      "endpoint": "/kata/jobs",
+      "url": "http://localhost:8000/api/kata/jobs",
+      "status": "passed",
+      "statusCode": 200,
+      "responseTime": 1,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"jobs\":[],\"total\":0}"
+    },
+    {
+      "name": "Kata Halftime Analyze",
+      "method": "POST",
+      "endpoint": "/kata/halftime/analyze",
+      "url": "http://localhost:8000/api/kata/halftime/analyze",
+      "status": "passed",
+      "statusCode": 200,
+      "responseTime": 100,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"success\":false,\"duration_seconds\":0,\"resolution\":[0,0],\"overall_mood\":\"\",\"narrative_arc\":[],\"recommended_insertion_frames\":[],\"dominant_colors\":[],\"scenes\":[],\"error\":\"Could not open video: test\"}"
+    },
+    {
+      "name": "Image Generate",
+      "method": "POST",
+      "endpoint": "/image-editor/generate",
+      "url": "http://localhost:8000/api/image-editor/generate",
+      "status": "passed",
+      "statusCode": 403,
+      "responseTime": 3,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "name": "List Image Sessions",
+      "method": "GET",
+      "endpoint": "/image-editor/sessions?organization_id=test-org",
+      "url": "http://localhost:8000/api/image-editor/sessions?organization_id=test-org",
+      "status": "passed",
+      "statusCode": 403,
+      "responseTime": 2,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "name": "Generate Landing Page",
+      "method": "POST",
+      "endpoint": "/content/landing-page/generate?organization_id=test-org",
+      "url": "http://localhost:8000/api/content/landing-page/generate?organization_id=test-org",
+      "status": "passed",
+      "statusCode": 403,
+      "responseTime": 2,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "name": "Scaffold Landing Page",
+      "method": "POST",
+      "endpoint": "/content/landing-page/scaffold?organization_id=test-org",
+      "url": "http://localhost:8000/api/content/landing-page/scaffold?organization_id=test-org",
+      "status": "passed",
+      "statusCode": 403,
+      "responseTime": 1,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "name": "Generate Email",
+      "method": "POST",
+      "endpoint": "/content/email/generate?organization_id=test-org",
+      "url": "http://localhost:8000/api/content/email/generate?organization_id=test-org",
+      "status": "passed",
+      "statusCode": 403,
+      "responseTime": 2,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "name": "Email Subject Variants",
+      "method": "POST",
+      "endpoint": "/content/email/subject-variants?organization_id=test-org",
+      "url": "http://localhost:8000/api/content/email/subject-variants?organization_id=test-org",
+      "status": "passed",
+      "statusCode": 200,
+      "responseTime": 3420,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "[{\"text\":\"Quick test: Are you ready?\",\"predicted_open_rate\":24.8,\"emoji\":false,\"urgency_level\":\"medium\"},{\"text\":\"🔬 Your test results are waiting\",\"predicted_open_rate\":32.1,\"emoji\":true,\"urgency_lev"
+    },
+    {
+      "name": "Email Templates",
+      "method": "GET",
+      "endpoint": "/content/email/templates",
+      "url": "http://localhost:8000/api/content/email/templates",
+      "status": "passed",
+      "statusCode": 200,
+      "responseTime": 8,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "[{\"id\":\"welcome\",\"name\":\"Welcome Email\",\"category\":\"welcome\",\"description\":\"Welcome new subscribers or customers\"},{\"id\":\"newsletter\",\"name\":\"Newsletter\",\"category\":\"newsletter\",\"description\":\"Regular"
+    },
+    {
+      "name": "Analytics Overview",
+      "method": "GET",
+      "endpoint": "/analytics/overview?organization_id=test-org",
+      "url": "http://localhost:8000/api/analytics/overview?organization_id=test-org",
+      "status": "passed",
+      "statusCode": 403,
+      "responseTime": 3,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": null,
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"error\":\"consent_required\",\"message\":\"User consent required for tracking\"}"
+    },
+    {
+      "name": "Campaign Analytics",
+      "method": "GET",
+      "endpoint": "/analytics/campaigns?organization_id=test-org",
+      "url": "http://localhost:8000/api/analytics/campaigns?organization_id=test-org",
+      "status": "passed",
+      "statusCode": 403,
+      "responseTime": 2,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": null,
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"error\":\"consent_required\",\"message\":\"User consent required for tracking\"}"
+    },
+    {
+      "name": "List Trends",
+      "method": "GET",
+      "endpoint": "/trends/?organization_id=test-org",
+      "url": "http://localhost:8000/api/trends/?organization_id=test-org",
+      "status": "passed",
+      "statusCode": 403,
+      "responseTime": 3,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "name": "Trend Categories",
+      "method": "GET",
+      "endpoint": "/trends/categories",
+      "url": "http://localhost:8000/api/trends/categories",
+      "status": "passed",
+      "statusCode": 200,
+      "responseTime": 2,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "[\"All\",\"Technology\",\"Business\",\"Marketing\",\"Finance\",\"Product\",\"Leadership\",\"Content Strategy\",\"Social Media\",\"Search Trends\",\"Discussion\"]"
+    },
+    {
+      "name": "List Tasks",
+      "method": "GET",
+      "endpoint": "/tasks/?organization_id=test-org",
+      "url": "http://localhost:8000/api/tasks/?organization_id=test-org",
+      "status": "passed",
+      "statusCode": 403,
+      "responseTime": 5,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "name": "List Scheduled Posts",
+      "method": "GET",
+      "endpoint": "/scheduled-posts/?organization_id=test-org",
+      "url": "http://localhost:8000/api/scheduled-posts/?organization_id=test-org",
+      "status": "passed",
+      "statusCode": 403,
+      "responseTime": 3,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "name": "Auth Login",
+      "method": "POST",
+      "endpoint": "/auth/login",
+      "url": "http://localhost:8000/api/auth/login",
+      "status": "passed",
+      "statusCode": 401,
+      "responseTime": 17,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"detail\":\"Invalid email or password\"}"
+    },
+    {
+      "name": "Auth Register",
+      "method": "POST",
+      "endpoint": "/auth/register",
+      "url": "http://localhost:8000/api/auth/register",
+      "status": "passed",
+      "statusCode": 422,
+      "responseTime": 9,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"detail\":[{\"type\":\"string_too_short\",\"loc\":[\"body\",\"password\"],\"msg\":\"String should have at least 8 characters\",\"input\":\"test\",\"ctx\":{\"min_length\":8}}]}"
+    },
+    {
+      "name": "List Deliverables",
+      "method": "GET",
+      "endpoint": "/deliverables/?campaign_id=test-campaign",
+      "url": "http://localhost:8000/api/deliverables/?campaign_id=test-campaign",
+      "status": "passed",
+      "statusCode": 403,
+      "responseTime": 2,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "name": "Get Organization",
+      "method": "GET",
+      "endpoint": "/organizations/test-org",
+      "url": "http://localhost:8000/api/organizations/test-org",
+      "status": "passed",
+      "statusCode": 403,
+      "responseTime": 2,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "name": "Get Knowledge Base",
+      "method": "GET",
+      "endpoint": "/organizations/test-org/knowledge-base",
+      "url": "http://localhost:8000/api/organizations/test-org/knowledge-base",
+      "status": "passed",
+      "statusCode": 403,
+      "responseTime": 2,
+      "error": null,
+      "corsHeaders": {
+        "access-control-allow-origin": "http://localhost:5173",
+        "access-control-allow-methods": null,
+        "access-control-allow-headers": null
+      },
+      "responsePreview": "{\"detail\":\"Not authenticated\"}"
+    }
+  ],
+  "summary": {
+    "total": 25,
+    "passed": 25,
+    "failed": 0,
+    "skipped": 0
+  },
+  "workstreamResults": {
+    "health": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0
+    },
+    "onboarding": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "campaigns": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "chat": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "kata": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0
+    },
+    "assets": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0
+    },
+    "landingPages": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0
+    },
+    "emailMarketing": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0
+    },
+    "analytics": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0
+    },
+    "trends": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0
+    },
+    "tasks": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0
+    },
+    "auth": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0
+    },
+    "deliverables": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "organizations": {
+      "total": 2,
+      "passed": 2,
+      "failed": 0
+    }
+  }
+}

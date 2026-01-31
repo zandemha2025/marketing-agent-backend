@@ -1,0 +1,199 @@
+.campaign-exec {
+  padding: var(--spacing-lg, 24px);
+}
+
+.campaign-exec__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 24px;
+}
+
+.campaign-exec__error {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--color-error);
+  padding: 10px 14px;
+  border-radius: var(--radius-md, 8px);
+  font-size: 0.8125rem;
+  margin-bottom: 20px;
+}
+
+.campaign-exec__phases {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.campaign-exec__phase {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: var(--radius-md, 8px);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  transition: all 0.3s;
+}
+
+.campaign-exec__phase--active {
+  border-color: var(--color-accent);
+  background: rgba(124, 58, 237, 0.1);
+}
+
+.campaign-exec__phase--done {
+  border-color: var(--color-success);
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.campaign-exec__phase-indicator {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-muted);
+}
+
+.campaign-exec__phase--active .campaign-exec__phase-indicator {
+  background: var(--color-accent);
+  color: var(--color-text-primary);
+}
+
+.campaign-exec__phase--done .campaign-exec__phase-indicator {
+  background: var(--color-success);
+  color: #fff;
+}
+
+.campaign-exec__check {
+  font-size: 0.8125rem;
+}
+
+.campaign-exec__phase-label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.campaign-exec__phase--active .campaign-exec__phase-label {
+  color: var(--color-text-primary);
+}
+
+.campaign-exec__phase--done .campaign-exec__phase-label {
+  color: var(--color-success);
+}
+
+.campaign-exec__progress-bar {
+  height: 6px;
+  background: var(--color-bg-tertiary);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.campaign-exec__progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+.campaign-exec__progress-text {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.campaign-exec__log {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md, 8px);
+  padding: 16px;
+  max-height: 320px;
+  overflow-y: auto;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.75rem;
+  line-height: 1.7;
+}
+
+.campaign-exec__msg {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.campaign-exec__msg-time {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.campaign-exec__msg-phase {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.campaign-exec__msg-text {
+  color: var(--color-text-secondary);
+}
+
+.campaign-exec__msg--error .campaign-exec__msg-text {
+  color: var(--color-error);
+}
+
+.campaign-exec__msg--complete .campaign-exec__msg-text {
+  color: var(--color-success);
+}
+
+.campaign-exec__msg--system .campaign-exec__msg-text {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Completion screen */
+.campaign-exec__complete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  text-align: center;
+}
+
+.campaign-exec__complete-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--color-success);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.campaign-exec__complete h2 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+  color: var(--color-text-primary);
+}
+
+.campaign-exec__complete-sub {
+  color: var(--color-text-secondary);
+  margin: 0 0 16px;
+  font-size: 0.9375rem;
+}
+
+.campaign-exec__complete-summary {
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  max-width: 480px;
+}

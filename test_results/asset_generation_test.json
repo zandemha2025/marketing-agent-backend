@@ -1,0 +1,51 @@
+{
+  "workstream": "asset_generation",
+  "timestamp": "2026-01-31T01:54:39.223800",
+  "tests": [
+    {
+      "name": "POST /api/assets/generate-image returns 200 (not 405)",
+      "passed": true,
+      "skipped": false,
+      "details": {
+        "status_code": 200,
+        "is_405": false
+      },
+      "timestamp": "2026-01-31T01:48:30.711086"
+    },
+    {
+      "name": "Image generation works (mock or real)",
+      "passed": true,
+      "skipped": false,
+      "details": {
+        "url": "/outputs/generated_images/afdc0440014f4a36.png",
+        "asset_id": "afdc0440014f4a36",
+        "backend_used": "unknown"
+      },
+      "timestamp": "2026-01-31T01:48:30.711122"
+    },
+    {
+      "name": "Multiple styles supported",
+      "passed": true,
+      "skipped": false,
+      "details": {
+        "styles_tested": [
+          "photorealistic",
+          "artistic",
+          "minimal"
+        ],
+        "styles_supported": [
+          "photorealistic",
+          "artistic",
+          "minimal"
+        ]
+      },
+      "timestamp": "2026-01-31T01:49:41.490628"
+    }
+  ],
+  "summary": {
+    "total": 3,
+    "passed": 3,
+    "failed": 0,
+    "skipped": 0
+  }
+}

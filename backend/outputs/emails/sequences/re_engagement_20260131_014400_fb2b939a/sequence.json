@@ -1,0 +1,60 @@
+{
+  "sequence_id": "fb2b939a-8cdd-480e-8eec-82f5b0b44007",
+  "sequence_type": "re_engagement",
+  "campaign_id": "test-sequence-re_engagement-001",
+  "timing_schedule": [
+    1,
+    3,
+    7,
+    14,
+    30
+  ],
+  "total_emails": 5,
+  "brand_data": {
+    "primary_color": "#007bff",
+    "font_family": "Arial"
+  },
+  "created_at": "2026-01-31T01:44:00.851574",
+  "emails": [
+    {
+      "day": 1,
+      "position": 1,
+      "subject": "Hey [First Name], we've noticed you've been away...",
+      "theme": "We Miss You",
+      "goal": "Acknowledge absence warmly",
+      "preview_text": "We miss having you around! Here's what you've been missing..."
+    },
+    {
+      "day": 3,
+      "position": 2,
+      "subject": "See what you've been missing! \ud83c\udf1f",
+      "theme": "What's New",
+      "goal": "Highlight recent improvements",
+      "preview_text": "We've made some exciting changes since you've been away"
+    },
+    {
+      "day": 7,
+      "position": 3,
+      "subject": "Here's 20% off to welcome you back! \ud83c\udf81",
+      "theme": "Special Offer",
+      "goal": "Incentivize return",
+      "preview_text": "We miss you! Enjoy this exclusive discount before it expires"
+    },
+    {
+      "day": 14,
+      "position": 4,
+      "subject": "How Sarah turned her life around (and you can too)",
+      "theme": "Success Story",
+      "goal": "Remind of value",
+      "preview_text": "A real story of transformation that will inspire you to take action today"
+    },
+    {
+      "day": 30,
+      "position": 5,
+      "subject": "\ud83d\udc94 This is goodbye (unless you click)",
+      "theme": "Last Chance",
+      "goal": "Create urgency",
+      "preview_text": "We hate goodbyes, but we need to know if you still want to hear from us"
+    }
+  ]
+}
