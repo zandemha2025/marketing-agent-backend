@@ -30,6 +30,7 @@ wheels/
 .venv/
 venv/
 ENV/
+env/
 
 # IDE
 .idea/
@@ -49,6 +50,8 @@ logs/
 # Database
 *.db
 *.db-journal
+*.db-shm
+*.db-wal
 
 # Node (if frontend exists)
 node_modules/
